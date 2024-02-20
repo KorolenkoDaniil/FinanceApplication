@@ -7,17 +7,17 @@
     <AbsoluteLayout BackgroundColor="#FFF7EC">
         <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, .6" HorizontalOptions="Center" >
             <Label Text="Общий баланс" Padding="0, 20, 0, 0" TextColor="Black" HorizontalOptions="Center"/>
-            <Grid>
+            <Grid HeightRequest="30" Margin="0, 20, 0, 20">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
-                <ImageButton x:Name="arrow_L" Grid.Column="0" WidthRequest="10" HeightRequest="10" BackgroundColor="Transparent"/>
-                <Label Text="date" Padding="0, 10, 0, 30" TextColor="Black" HorizontalOptions="Center" Grid.Column="1" />
-                <ImageButton x:Name="arrow_R" Grid.Column="2" WidthRequest="10" HeightRequest="10" BackgroundColor="Transparent"/>
 
+                <ImageButton x:Name="arrow_L" Grid.Column="0" WidthRequest="15" HeightRequest="15" BackgroundColor="Transparent"/>
+                <Label Text="date"  TextColor="Black" HorizontalOptions="Center" Grid.Column="1" />
+                <ImageButton x:Name="arrow_R" Grid.Column="2"  BackgroundColor="Transparent"/>
             </Grid>
            
             
@@ -27,8 +27,18 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Frame CornerRadius="30" WidthRequest="250" HeightRequest="100" BackgroundColor="White" Grid.Column="0"/>
-                    <Frame CornerRadius="30" WidthRequest="250" HeightRequest="100" BackgroundColor="White" Grid.Column="1"/>
+                    <Frame CornerRadius="30" WidthRequest="250" HeightRequest="100" BackgroundColor="White" Grid.Column="0">
+                        <StackLayout HorizontalOptions="Center">
+                            <Label HorizontalOptions="Center" TextColor="Black" Text="Расходы"/>
+                            <Label HorizontalOptions="Center" TextColor="Black" Text="00,00"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame CornerRadius="30" WidthRequest="250" HeightRequest="100" BackgroundColor="White" Grid.Column="1">
+                        <StackLayout HorizontalOptions="Center">
+                            <Label HorizontalOptions="Center" TextColor="Black" Text="Доходы"/>
+                            <Label HorizontalOptions="Center" TextColor="Black" Text="00,00"/>
+                        </StackLayout>
+                    </Frame>
                 </Grid>
             </Frame>
 
@@ -40,7 +50,7 @@
                 <ImageButton x:Name="cathegory" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
                 <ImageButton x:Name="list" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
                 <ImageButton x:Name="diagram" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
-                <ImageButton x:Name="change" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
+                <ImageButton Clicked="ToCalculatorPage" x:Name="change" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
             </FlexLayout>
         </Frame>
     </AbsoluteLayout>

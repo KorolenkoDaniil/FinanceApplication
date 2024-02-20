@@ -17,7 +17,7 @@ namespace FinanceApp.views
 			InitializeComponent ();
 			card.Source = ImageSource.FromResource("FinanceApp.icons.card.png");
             cathegory.Source = ImageSource.FromResource("FinanceApp.icons.cathegories.png");
-            list.Source = ImageSource.FromResource("FinanceApp.icons.list.png");
+            list.Source = ImageSource.FromResource("FinanceApp.icons.list1.png");
 			diagram.Source = ImageSource.FromResource("FinanceApp.icons.diagram.png");
 			change.Source = ImageSource.FromResource("FinanceApp.icons.change.png");
 			arrow_L.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_l.png");
@@ -27,6 +27,10 @@ namespace FinanceApp.views
         private async void ToCardPage(object sender, EventArgs e)
         {
 			await Navigation.PushAsync(new MainPage()); 
+        }
+        private async void ToCalculatorPage(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CalculatorPage());
         }
     }
 }
