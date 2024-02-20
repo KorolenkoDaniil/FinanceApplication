@@ -1,0 +1,14 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinanceApp.MainPage">
+
+    <!--<AbsoluteLayout BackgroundColor="{Binding Color}">-->
+    <AbsoluteLayout BackgroundColor="#FFF7EC">
+        <Label Text="Sign up" TextColor="Black" FontSize="16" AbsoluteLayout.LayoutBounds=".2, .15" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <Entry TextColor="Black" Placeholder="the email" PlaceholderColor="Gray" HorizontalOptions ="Fill" AbsoluteLayout.LayoutBounds=".36, .15, .6, .1" AbsoluteLayout.LayoutFlags="PositionProportional" />
+        <Entry TextColor="Black" Placeholder="name" PlaceholderColor="Gray" HorizontalOptions ="Fill" AbsoluteLayout.LayoutBounds=".36, .3, .6, .1" AbsoluteLayout.LayoutFlags="All"/>
+        <Entry TextColor="Black" Placeholder="pasword" PlaceholderColor="Gray" HorizontalOptions ="Fill" AbsoluteLayout.LayoutBounds=".36, .4, .6, .1" AbsoluteLayout.LayoutFlags="All"/>
+        <Entry TextColor="Black" Placeholder="repeat pasword" PlaceholderColor="Gray" HorizontalOptions ="Fill" AbsoluteLayout.LayoutBounds=".36, .5, .6, .1" AbsoluteLayout.LayoutFlags="All"/>
+        <Button Clicked="ToPageOfCommonInformation" Text="Sign Up" CornerRadius="16" HorizontalOptions="Fill" Grid.Column="0" Grid.Row="5" AbsoluteLayout.LayoutBounds=".36, .7, .8, .08" AbsoluteLayout.LayoutFlags="All"/>
+    </AbsoluteLayout>
+</ContentPage>

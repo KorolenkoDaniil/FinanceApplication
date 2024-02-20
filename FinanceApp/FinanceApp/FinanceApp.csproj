@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <ProduceReferenceAssemblyInOutDir>true</ProduceReferenceAssemblyInOutDir>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="icons\arrow_to_l.png" />
+    <None Remove="icons\arrow_to_r.png" />
+    <None Remove="icons\card.png" />
+    <None Remove="icons\card1.png" />
+    <None Remove="icons\cathegories.png" />
+    <None Remove="icons\cathegories1.png" />
+    <None Remove="icons\change.png" />
+    <None Remove="icons\change1.png" />
+    <None Remove="icons\diagram.png" />
+    <None Remove="icons\diagram1.png" />
+    <None Remove="icons\list.png" />
+    <None Remove="icons\list1.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="icons\arrow_to_l.png" />
+    <EmbeddedResource Include="icons\arrow_to_r.png" />
+    <EmbeddedResource Include="icons\card.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <ApplicationDefinition Include="icons\card1.png" />
+    <EmbeddedResource Include="icons\cathegories.png" />
+    <EmbeddedResource Include="icons\cathegories1.png" />
+    <EmbeddedResource Include="icons\change.png" />
+    <EmbeddedResource Include="icons\change1.png" />
+    <EmbeddedResource Include="icons\diagram.png" />
+    <EmbeddedResource Include="icons\diagram1.png" />
+    <EmbeddedResource Include="icons\list.png" />
+    <EmbeddedResource Include="icons\list1.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="views\CommonInformationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="views\PassPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
