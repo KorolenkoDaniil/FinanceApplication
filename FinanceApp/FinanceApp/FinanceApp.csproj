@@ -51,13 +51,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="views\ConvertPage.xaml.cs">
+      <DependentUpon>ConvertPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="views\CalculatorPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="views\CommonInformationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="views\CovertPage.xaml">
+    <EmbeddedResource Update="views\ConvertPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="views\PassPage.xaml">

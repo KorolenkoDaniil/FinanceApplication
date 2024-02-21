@@ -13,8 +13,9 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label HorizontalOptions="Center" TextColor="Black" Text="Калькулятор" FontSize="24" Grid.Column="0"/>
-                <Label HorizontalOptions="Center" TextColor="Black" Text="Конвертер" FontSize="24" Grid.Column="1"/>
+                <Button Clicked="ToCalcuatorPage" HorizontalOptions="Center" TextColor="Black" Text="Калькулятор" BackgroundColor="Transparent" FontSize="20" Grid.Column="0"/>
+                <Button Clicked="ToConvertPage" HorizontalOptions="Center" TextColor="Black" Text="Конвертер" BackgroundColor="Transparent" FontSize="20" Grid.Column="1"/>
+
             </Grid>
             <Grid>
                 <Grid.ColumnDefinitions>
