@@ -18,7 +18,7 @@ namespace FinanceApp.views
 
         private async void ToListPage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CommonInformationPage());
+            await Navigation.PushAsync(new ListPage());
         }
 
         private async void ToCalcuatorPage(object sender, EventArgs e)
@@ -29,6 +29,11 @@ namespace FinanceApp.views
         private void ToConvertPage(object sender, EventArgs e)
         {
             //сброс данных 
+        }
+
+        private async void ToAccountsPage(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AccountsPage());
         }
     }
 }

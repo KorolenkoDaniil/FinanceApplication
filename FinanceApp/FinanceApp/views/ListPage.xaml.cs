@@ -9,10 +9,9 @@ using Xamarin.Forms.Xaml;
 
 namespace FinanceApp.views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class CommonInformationPage : ContentPage
+	public partial class ListPage : ContentPage
 	{
-		public CommonInformationPage ()
+		public ListPage ()
 		{
 			InitializeComponent ();
 			card.Source = ImageSource.FromResource("FinanceApp.icons.card.png");
@@ -24,13 +23,15 @@ namespace FinanceApp.views
 			arrow_R.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_r.png");
 		}
 
-        private async void ToCardPage(object sender, EventArgs e)
-        {
-			await Navigation.PushAsync(new MainPage()); 
-        }
+       
         private async void ToCalculatorPage(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new CalculatorPage());
+        }
+
+        private async void ToCAccountsPage(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AccountsPage());
         }
     }
 }

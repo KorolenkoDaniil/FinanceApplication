@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinanceApp.views.AccountsPage">
+    <AbsoluteLayout BackgroundColor="#FFF7EC">
+        <StackLayout>
+          
+        </StackLayout>
+        <Frame AbsoluteLayout.LayoutBounds="0, 1, 1, .09" AbsoluteLayout.LayoutFlags="All" BackgroundColor="White" Padding="0">
+            
+            <FlexLayout HorizontalOptions="Fill" FlowDirection="LeftToRight" JustifyContent="SpaceEvenly">
+                <ImageButton x:Name="card" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
+                <ImageButton x:Name="cathegory" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
+                <ImageButton x:Name="list" Clicked="ToListPage" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
+                <ImageButton x:Name="diagram" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
+                <ImageButton x:Name="change" Clicked="change_Clicked" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
+            </FlexLayout>
+            
+        </Frame>
+    </AbsoluteLayout>
+</ContentPage>

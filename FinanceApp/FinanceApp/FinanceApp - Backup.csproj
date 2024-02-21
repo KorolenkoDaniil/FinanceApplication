@@ -15,7 +15,6 @@
     <None Remove="icons\arrow_to_l.png" />
     <None Remove="icons\arrow_to_r.png" />
     <None Remove="icons\card.png" />
-    <None Remove="icons\card1.1.png" />
     <None Remove="icons\card1.png" />
     <None Remove="icons\cathegories.png" />
     <None Remove="icons\cathegories1.png" />
@@ -35,7 +34,6 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
     <ApplicationDefinition Include="icons\card1.png" />
-    <EmbeddedResource Include="icons\card1.1.png" />
     <EmbeddedResource Include="icons\cathegories.png" />
     <EmbeddedResource Include="icons\cathegories1.png" />
     <EmbeddedResource Include="icons\change.png" />
@@ -53,9 +51,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="views\ListPage.xaml.cs">
-      <DependentUpon>ListPage.xaml</DependentUpon>
-    </Compile>
     <Compile Update="views\ConvertPage.xaml.cs">
       <DependentUpon>ConvertPage.xaml</DependentUpon>
     </Compile>

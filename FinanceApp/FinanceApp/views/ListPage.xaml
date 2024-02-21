@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FinanceApp.views.CommonInformationPage">
+             x:Class="FinanceApp.views.ListPage">
     
        
     <AbsoluteLayout BackgroundColor="#FFF7EC">
@@ -46,11 +46,13 @@
                 <Button Padding="1, 0, 0, 2" Text="+" TextColor="Black" FontSize="32" BackgroundColor="#F5E3D9" CornerRadius="30" WidthRequest="60" HeightRequest="60" AbsoluteLayout.LayoutBounds=".94, .87" AbsoluteLayout.LayoutFlags="PositionProportional" />
         <Frame AbsoluteLayout.LayoutBounds="0, 1, 1, .09" AbsoluteLayout.LayoutFlags="All" BackgroundColor="White" Padding="0">
             <FlexLayout HorizontalOptions="Fill" FlowDirection="LeftToRight" JustifyContent="SpaceEvenly">
-                <ImageButton Clicked="ToCardPage" x:Name="card" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
-                <ImageButton x:Name="cathegory" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
+                
+                <ImageButton x:Name="card" Clicked="ToCAccountsPage" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
+                <ImageButton x:Name="cathegory"  WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
                 <ImageButton x:Name="list" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
                 <ImageButton x:Name="diagram" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
                 <ImageButton Clicked="ToCalculatorPage" x:Name="change" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
+                
             </FlexLayout>
         </Frame>
     </AbsoluteLayout>

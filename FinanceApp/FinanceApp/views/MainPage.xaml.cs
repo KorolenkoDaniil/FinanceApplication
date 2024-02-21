@@ -45,7 +45,7 @@ namespace FinanceApp
 
         private async void ToPageOfCommonInformation(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CommonInformationPage());
+            await Navigation.PushAsync(new ListPage());
         }
 
         //private async void ToPassPage(object sender, EventArgs e)

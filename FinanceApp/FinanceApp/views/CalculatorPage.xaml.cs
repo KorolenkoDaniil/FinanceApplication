@@ -19,13 +19,11 @@ namespace FinanceApp.views
             change.Source = ImageSource.FromResource("FinanceApp.icons.change1.png");
             delete.Source = ImageSource.FromResource("FinanceApp.icons.delete-right.png");
         }
-        private void change_Clicked(object sender, EventArgs e)
-        {
-        }
+        
 
         private async void ToListPage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CommonInformationPage());
+            await Navigation.PushAsync(new ListPage());
         }
 
         private void ToCalcuatorPage(object sender, EventArgs e)
@@ -36,6 +34,11 @@ namespace FinanceApp.views
         private async void ToConvertPage(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new CovertPage());
+        }
+
+        private async void ToAccountsPage(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AccountsPage());
         }
     }
 }

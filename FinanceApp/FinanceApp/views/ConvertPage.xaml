@@ -59,9 +59,9 @@
         </StackLayout>
         <Frame AbsoluteLayout.LayoutBounds="0, 1, 1, .09" AbsoluteLayout.LayoutFlags="All" BackgroundColor="White" Padding="0">
             <FlexLayout HorizontalOptions="Fill" FlowDirection="LeftToRight" JustifyContent="SpaceEvenly">
-                <ImageButton x:Name="card" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
+                <ImageButton x:Name="card" Clicked="ToAccountsPage" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
                 <ImageButton x:Name="cathegory" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
-                <ImageButton x:Name="list" Clicked="ToListPage"  WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
+                <ImageButton x:Name="list" Clicked="ToListPage" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
                 <ImageButton x:Name="diagram" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
                 <ImageButton x:Name="change" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
             </FlexLayout>
