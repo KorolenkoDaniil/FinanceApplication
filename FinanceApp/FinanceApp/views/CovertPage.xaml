@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="FinanceApp.views.CalculatorPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinanceApp.views.CovertPage">
     
     
     
@@ -29,30 +29,25 @@
 
 
             <Grid>
+
+                <Button Text="7" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="0" Grid.Row="1"/>
+                <Button Text="8" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="1" Grid.Row="1"/>
+                <Button Text="9" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="2" Grid.Row="1"/>
                 <Button Text="C" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="#ededed" Grid.Column="0" Grid.Row="0"/>
-                <Button Text="%" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="#ededed" Grid.Column="1" Grid.Row="0"/>
+
+                <Button Text="4" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="0" Grid.Row="2"/>
+                <Button Text="5" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="1" Grid.Row="2"/>
+                <Button Text="6" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="2" Grid.Row="2"/>
                 <Frame Padding="0"  HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="#ededed" Grid.Column="2" Grid.Row="0">
                     <AbsoluteLayout>
                         <ImageButton x:Name="delete" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5, .5, .5, .5" BackgroundColor="Transparent"/>
                     </AbsoluteLayout>
                 </Frame>
-                <Button Text="/" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="#ededed" Grid.Column="3" Grid.Row="0"/>
-
-                <Button Text="7" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="0" Grid.Row="1"/>
-                <Button Text="8" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="1" Grid.Row="1"/>
-                <Button Text="9" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="2" Grid.Row="1"/>
-                <Button Text="+" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="#ededed" Grid.Column="3" Grid.Row="1"/>
-
-                <Button Text="4" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="0" Grid.Row="2"/>
-                <Button Text="5" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="1" Grid.Row="2"/>
-                <Button Text="6" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="2" Grid.Row="2"/>
-                <Button Text="-" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="#ededed" Grid.Column="3" Grid.Row="2"/>
-
 
                 <Button Text="1" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="0" Grid.Row="3"/>
                 <Button Text="2" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="1" Grid.Row="3"/>
                 <Button Text="3" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="2" Grid.Row="3"/>
-                <Button Text="*" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="#ededed" Grid.Column="3" Grid.Row="3"/>
+               
 
                 <Button Text="00" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="0" Grid.Row="4"/>
                 <Button Text="0" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="1" Grid.Row="4"/>
@@ -65,7 +60,7 @@
             <FlexLayout HorizontalOptions="Fill" FlowDirection="LeftToRight" JustifyContent="SpaceEvenly">
                 <ImageButton x:Name="card" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
                 <ImageButton x:Name="cathegory" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
-                <ImageButton x:Name="list" Clicked="ToListPage" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
+                <ImageButton x:Name="list" Clicked="ToListPage"  WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
                 <ImageButton x:Name="diagram" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
                 <ImageButton x:Name="change" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
             </FlexLayout>
