@@ -15,20 +15,43 @@
             </Grid>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="0.3*" />
+                    <ColumnDefinition Width="0.7*" />
                 </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="100"/>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="60"/>
-                </Grid.RowDefinitions>
+                <Entry Margin="20" TextColor="Black" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="End" />
+                <Entry Margin="20" TextColor="Black" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="End" />
+            </Grid>
 
-                <Button HorizontalOptions="Center" WidthRequest="2-" HeightRequest="20" CornerRadius="75" BackgroundColor="#ededed" Grid.Column="0" Grid.Row="0"/>
+
+
+
+            <Grid>
+   
+                <Button Text="C" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="#ededed" Grid.Column="0" Grid.Row="0"/>
+                <Button Text="%" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="#ededed" Grid.Column="1" Grid.Row="0"/>
+                <ImageButton x:Name="delete" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="#ededed" Grid.Column="2" Grid.Row="0"/>
+                <Button Text="C" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="#ededed" Grid.Column="3" Grid.Row="0"/>
+
+                <Button Text="C" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="0" Grid.Row="1"/>
+                <Button Text="C" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="1" Grid.Row="1"/>
+                <Button Text="C" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="2" Grid.Row="1"/>
+                <Button Text="C" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="#ededed" Grid.Column="3" Grid.Row="1"/>
+
+                <Button Text="C" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="0" Grid.Row="2"/>
+                <Button Text="C" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="1" Grid.Row="2"/>
+                <Button Text="C" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="2" Grid.Row="2"/>
+                <Button Text="C" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="#ededed" Grid.Column="3" Grid.Row="2"/>
+
+
+                <Button Text="C" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="0" Grid.Row="3"/>
+                <Button Text="C" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="1" Grid.Row="3"/>
+                <Button Text="C" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="2" Grid.Row="3"/>
+                <Button Text="C" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="#ededed" Grid.Column="3" Grid.Row="3"/>
+
+                <Button Text="C" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="0" Grid.Row="4"/>
+                <Button Text="C" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="1" Grid.Row="4"/>
+                <Button Text="C" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="White" Grid.Column="2" Grid.Row="4"/>
+                <Button Text="C" TextColor="Black" HorizontalOptions="Center" WidthRequest="65" HeightRequest="65" CornerRadius="30" BackgroundColor="#FF9696" Grid.Column="3" Grid.Row="4"/>
 
             </Grid>
         </StackLayout>

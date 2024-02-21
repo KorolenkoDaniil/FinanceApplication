@@ -20,6 +20,7 @@ namespace FinanceApp.views
             list.Source = ImageSource.FromResource("FinanceApp.icons.list.png");
             diagram.Source = ImageSource.FromResource("FinanceApp.icons.diagram.png");
             change.Source = ImageSource.FromResource("FinanceApp.icons.change1.png");
+            delete.Source = ImageSource.FromResource("FinanceApp.icons.delete-right.png");
         }
 
         private void change_Clicked(object sender, EventArgs e)
