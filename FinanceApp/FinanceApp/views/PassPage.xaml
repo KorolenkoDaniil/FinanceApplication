@@ -1,10 +1,40 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinanceApp.views.PassPage">
-  <ContentView.Content>
-      <AbsoluteLayout>
-         
-      </AbsoluteLayout>
-  </ContentView.Content>
-</ContentView>
+    <ContentPage.Content >
+        <StackLayout BackgroundColor="#FFF7EC" Padding="0">
+            <Grid >
+                <Label Text="введите код" HorizontalOptions="Center" TextColor="Black" Grid.Column="0" Grid.Row="0"/>
+                <Label Text="@nickname" HorizontalOptions="Center" TextColor="Black" Grid.Column="0" Grid.Row="1" />
+                <Grid HorizontalOptions="Center" Grid.Column="0" Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="30" />
+                    </Grid.ColumnDefinitions>
+                    <Frame BackgroundColor="Black" WidthRequest="50" HeightRequest="50" CornerRadius="30" Padding="2" Grid.Column="0" Grid.Row="0">
+                        <Frame BackgroundColor="#FFF7EC" WidthRequest="5" HeightRequest="50" CornerRadius="30"/>
+                    </Frame>
+                    <Frame BackgroundColor="Black" WidthRequest="50" HeightRequest="50" CornerRadius="30" Padding="2" Grid.Column="1" Grid.Row="0">
+                        <Frame BackgroundColor="#FFF7EC" WidthRequest="5" HeightRequest="50" CornerRadius="30"/>
+                    </Frame>
+                    <Frame BackgroundColor="Black" WidthRequest="50" HeightRequest="50" CornerRadius="30" Padding="2" Grid.Column="2" Grid.Row="0">
+                        <Frame BackgroundColor="#FFF7EC" WidthRequest="5" HeightRequest="50" CornerRadius="30"/>
+                    </Frame>
+                    <Frame BackgroundColor="Black" WidthRequest="50" HeightRequest="50" CornerRadius="30" Padding="2" Grid.Column="3" Grid.Row="0">
+                        <Frame BackgroundColor="#FFF7EC" WidthRequest="5" HeightRequest="50" CornerRadius="30"/>
+                    </Frame>
+                </Grid>
+            </Grid>
+            <AbsoluteLayout VerticalOptions="FillAndExpand" Padding="0" Margin="0, 150 ,0, 0 ">
+                <Frame Grid.Column="0" Grid.Row="3" AbsoluteLayout.LayoutBounds=".5, .2, .86, 1" CornerRadius="30" AbsoluteLayout.LayoutFlags="All" Padding="0"/>
+                <Frame  AbsoluteLayout.LayoutBounds=".5, 1, .86, .2" AbsoluteLayout.LayoutFlags="All" BackgroundColor="white"/>
+            </AbsoluteLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

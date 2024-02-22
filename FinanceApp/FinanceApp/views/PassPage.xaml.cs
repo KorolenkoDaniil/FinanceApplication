@@ -9,12 +9,12 @@ using Xamarin.Forms.Xaml;
 
 namespace FinanceApp.views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class PassPage : ContentView
-	{
-		public PassPage ()
-		{
-			InitializeComponent ();
-		}
-	}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class PassPage : ContentPage
+    {
+        public PassPage()
+        {
+            InitializeComponent();
+        }
+    }
 }
