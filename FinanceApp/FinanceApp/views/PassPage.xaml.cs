@@ -12,68 +12,72 @@ namespace FinanceApp.views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PassPage : ContentPage
     {
-        char[] passCode = new char[4];
-        int passCodeIndex = -1;
+        string passCode = "";
         public PassPage()
         {
             InitializeComponent();
             delete.Source = ImageSource.FromResource("FinanceApp.icons.delete-right.png");
         }
-
         private void NumberButtonClicked(object sender, EventArgs e)
         {
-            if (passCodeIndex < 4) passCodeIndex++;
+            if (passCode.Length > 3) return;
             if (sender is Button button)
             {
-                passCode[passCodeIndex] = button.Text.ToCharArray()[0];
+                passCode += button.Text;
             }
-            for (int i = 0; i < passCode.Length; i++) Console.WriteLine(passCode[i]);
-            ColorizeCircle(passCodeIndex);
+            Console.WriteLine(passCode);
+            ColorizeCircle();
         }
 
 
         public void DeleteSymbol(object sender, EventArgs e)
         {
-            if (passCodeIndex > -1) DeColorizeCircle(passCodeIndex);
+            if (passCode.Length <= 0) return;
+            passCode = passCode.Substring(0, passCode.Length - 1);
+            Console.WriteLine(passCode);
+            DeColorizeCircle();
+        }
+        public void DeleteSymbol()
+        {
+            if (passCode.Length <= 0) return;
+            passCode = passCode.Substring(0, passCode.Length - 1);
+            Console.WriteLine(passCode);
+            DeColorizeCircle();
         }
 
 
 
-        public async void ColorizeCircle(int circleNumber)
+        public async void ColorizeCircle()
         {
-            switch (passCodeIndex)
+            int circlenumber = passCode.Length;
+            switch (circlenumber)
             {
-                case 0:
+                case 1:
                     {
                         circle1.BackgroundColor = Color.Black;
                         break;
                     }
-                case 1:
+                case 2:
                     {
                         circle2.BackgroundColor = Color.Black;
                         break;
                     }
-                case 2:
+                case 3:
                     {
                         circle3.BackgroundColor = Color.Black;
                         break;
                     }
-                case 3:
+                case 4:
                     {
-                        string code = "";
-                        foreach (char num in passCode) code += num;
-                        if (string.Equals("1234", code))
-                        {
-                            await Navigation.PushAsync(new ListPage());
-                        }
+                        circle4.BackgroundColor = Color.Black;
+                        if (string.Equals("1234", passCode)) await Navigation.PushAsync(new ListPage());
                         else
                         {
-                            DeColorizeCircle(3);
-                            DeColorizeCircle(2);
-                            DeColorizeCircle(1);
-                            DeColorizeCircle(0);
+                            DeleteSymbol();
+                            DeleteSymbol();
+                            DeleteSymbol();
+                            DeleteSymbol();
                         }
-
                         break;
                     }
 
@@ -82,11 +86,10 @@ namespace FinanceApp.views
 
 
 
-        public void DeColorizeCircle(int circleNumber)
+        public void DeColorizeCircle()
         {
-            passCode[passCodeIndex] = 'a';
-            passCodeIndex--;
-            switch (passCodeIndex)
+            int circlenumber = passCode.Length;
+            switch (circlenumber)
             {
                 case 0:
                     {
@@ -108,9 +111,8 @@ namespace FinanceApp.views
                         circle4.BackgroundColor = Color.FromHex("#FFF7EC");
                         break;
                     }
-
             }
+      
         }
-
     }
 }
