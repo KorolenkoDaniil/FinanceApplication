@@ -1,31 +1,14 @@
 ﻿using FinanceApp.views;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Essentials;
 using Xamarin.Forms;
+using FinanceApp.classes;
 
 namespace FinanceApp
 {
-    public partial class MainPage : ContentPage/*, INotifyPropertyChanged*/
+    public partial class MainPage : ContentPage
     {
         public string color = "#FFF7EC";
-        //public string Color
-        //{
-        //    get { return _color; }
-        //    set
-        //    {
-        //        if (_color != value)
-        //        {
-        //            _color = value;
-        //            OnPropertyChanged(nameof(Color));
-        //        }
-        //    }
-        //}
+        User user = new User();
 
         public MainPage()
         {
@@ -34,7 +17,7 @@ namespace FinanceApp
         }
    
 
-    private void PrintSize(object sender, EventArgs e)
+        private void PrintSize(object sender, EventArgs e)
         {
             double width = Application.Current.MainPage.Width;
             double height = Application.Current.MainPage.Height;
@@ -45,12 +28,13 @@ namespace FinanceApp
 
         private async void ToPageOfCommonInformation(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(entryPass1.Text) || string.IsNullOrEmpty(entryPass2.Text) || string.IsNullOrEmpty(entryName.Text) || string.IsNullOrEmpty(entryEmail.Text)) return;
+           
+            if (!string.Equals(entryPass1.Text, entryPass2.Text)) return;
+
+            User newuser = new User(entryName.Text, entryEmail.Text, entryPass1.Text);
+            user = newuser;
             await Navigation.PushAsync(new ListPage());
         }
-
-        //private async void ToPassPage(object sender, EventArgs e)
-        //{
-        //    await Navigation.PushAsync(new Pas());
-        //}
     }
 }
