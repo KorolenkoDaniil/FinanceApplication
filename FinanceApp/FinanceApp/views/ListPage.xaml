@@ -2,11 +2,28 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinanceApp.views.ListPage">
-    
-       
+
+
     <AbsoluteLayout BackgroundColor="#FFF7EC">
-        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, .6" HorizontalOptions="Center" >
-            <Label Text="Общий баланс" Padding="0, 20, 0, 0" TextColor="Black" HorizontalOptions="Center"/>
+        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" >
+            <AbsoluteLayout HorizontalOptions="Fill">
+                <Frame AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" >
+                    <StackLayout>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.7*"/>
+                                <ColumnDefinition Width="0.3*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="MonthLabel" TextColor="Black" Grid.Column="0" />
+                            <Frame Margin="30,0,0,0" BackgroundColor="Aqua" Grid.Column="0"/>
+                        </Grid>
+                     
+                    </StackLayout>
+                </Frame>
+            </AbsoluteLayout>
+        </StackLayout>
+        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, .2, 1, .6" HorizontalOptions="Center" >
+            <Label Text="Общий баланс" Padding="0, 10, 0, 0" TextColor="Black" HorizontalOptions="Center"/>
             <Grid HeightRequest="30" Margin="0, 20, 0, 20">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
@@ -16,7 +33,7 @@
 
 
                 <ImageButton x:Name="arrow_L" Grid.Column="0" WidthRequest="15" HeightRequest="15" BackgroundColor="Transparent"/>
-                <Label Text="date"  TextColor="Black" HorizontalOptions="Center" Grid.Column="1" />
+                <Label x:Name="DateLabel" Text="date" TextColor="Black" HorizontalOptions="Center" Grid.Column="1" />
                 <ImageButton x:Name="arrow_R" Grid.Column="2"  BackgroundColor="Transparent"/>
             </Grid>
            

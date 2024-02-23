@@ -24,7 +24,11 @@ namespace FinanceApp.views
 			change.Source = ImageSource.FromResource("FinanceApp.icons.change.png");
 			arrow_L.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_l.png");
 			arrow_R.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_r.png");
-		}
+            DateLabel.Text = DateTime.Now.ToString("dd MMMM");
+            MonthLabel.Text = DateTime.Now.ToString("MMMM");
+            NavigationPage.SetHasNavigationBar(this, false);
+
+        }
         public ListPage(User person)
         {
             InitializeComponent();

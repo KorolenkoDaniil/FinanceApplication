@@ -17,6 +17,7 @@ namespace FinanceApp.views
         {
             InitializeComponent();
             delete.Source = ImageSource.FromResource("FinanceApp.icons.delete-right.png");
+            NavigationPage.SetHasNavigationBar(this, false);
         }
         private void NumberButtonClicked(object sender, EventArgs e)
         {
