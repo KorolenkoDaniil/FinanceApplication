@@ -4,53 +4,89 @@
              x:Class="FinanceApp.views.PassPage">
     <ContentPage.Content >
         <StackLayout BackgroundColor="#FFF7EC" Padding="0">
-            <Label Margin="0, 20, 0, 0" FontSize="Large" Text="введите код" HorizontalOptions="Center" TextColor="Black" Grid.Column="0" Grid.Row="0"/>
-            <Label Text="@nickname" HorizontalOptions="Center" TextColor="Black" Grid.Column="0" Grid.Row="1" />
-            <Grid Margin="0, 30, 0, 0" HorizontalOptions="Center" Grid.Column="0" Grid.Row="2">
+            <Grid VerticalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="30" />
+                    <RowDefinition Height=".025*"/> <!--пропуск-->
+                    <RowDefinition Height=".04*"/>
+                    <RowDefinition Height=".005*"/><!--пропуск-->
+                    <RowDefinition Height=".04*"/>
+                    <RowDefinition Height=".04*"/> <!--пропуск-->
+                    <RowDefinition Height=".2*"/>
+                    <RowDefinition Height=".15*"/> <!--пропуск-->
+                    <RowDefinition Height=".5*"/>
                 </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="30" />
-                    <ColumnDefinition Width="30" />
-                    <ColumnDefinition Width="30" />
-                    <ColumnDefinition Width="30" />
-                </Grid.ColumnDefinitions>
-                <Frame BackgroundColor="Black" WidthRequest="50" HeightRequest="50" CornerRadius="30" Padding="2" Grid.Column="0" Grid.Row="0">
-                    <Frame x:Name="circle1" BackgroundColor="#FFF7EC" WidthRequest="5" HeightRequest="50" CornerRadius="30"/>
-                </Frame>
-                <Frame BackgroundColor="Black" WidthRequest="50" HeightRequest="50" CornerRadius="30" Padding="2" Grid.Column="1" Grid.Row="0">
-                    <Frame x:Name="circle2" BackgroundColor="#FFF7EC" WidthRequest="5" HeightRequest="50" CornerRadius="30"/>
-                </Frame>
-                <Frame BackgroundColor="Black" WidthRequest="50" HeightRequest="50" CornerRadius="30" Padding="2" Grid.Column="2" Grid.Row="0">
-                    <Frame x:Name="circle3" BackgroundColor="#FFF7EC" WidthRequest="5" HeightRequest="50" CornerRadius="30"/>
-                </Frame>
-                <Frame BackgroundColor="Black" WidthRequest="50" HeightRequest="50" CornerRadius="30" Padding="2" Grid.Column="3" Grid.Row="0">
-                    <Frame x:Name="circle4" BackgroundColor="#FFF7EC" WidthRequest="5" HeightRequest="50" CornerRadius="30"/>
-                </Frame>
-            </Grid>
-            <AbsoluteLayout VerticalOptions="FillAndExpand" Padding="0" Margin="0, 100 ,0, 0 ">
-                <Frame  AbsoluteLayout.LayoutBounds=".5, 1, .86, .2" AbsoluteLayout.LayoutFlags="All" BackgroundColor="white"/>
-                <Frame Grid.Column="0" Grid.Row="3" AbsoluteLayout.LayoutBounds=".5, .2, .86, 1" CornerRadius="30" AbsoluteLayout.LayoutFlags="All" Padding="30">
-                    <Grid>
-                        <Button Clicked="NumberButtonClicked" BackgroundColor="White" FontSize="Large" TextColor="Black" Text="1" Grid.Column="0" Grid.Row="0"/>
-                        <Button Clicked="NumberButtonClicked" BackgroundColor="White" FontSize="Large" TextColor="Black" Text="2" Grid.Column="1" Grid.Row="0"/>
-                        <Button Clicked="NumberButtonClicked" BackgroundColor="White" FontSize="Large" TextColor="Black" Text="3" Grid.Column="2" Grid.Row="0"/>
-                        <Button Clicked="NumberButtonClicked" BackgroundColor="White" FontSize="Large" TextColor="Black" Text="4" Grid.Column="0" Grid.Row="1"/>
-                        <Button Clicked="NumberButtonClicked" BackgroundColor="White" FontSize="Large" TextColor="Black" Text="5" Grid.Column="1" Grid.Row="1"/>
-                        <Button Clicked="NumberButtonClicked" BackgroundColor="White" FontSize="Large" TextColor="Black" Text="6" Grid.Column="2" Grid.Row="1"/>
-                        <Button Clicked="NumberButtonClicked" BackgroundColor="White" FontSize="Large" TextColor="Black" Text="7" Grid.Column="0" Grid.Row="2"/>
-                        <Button Clicked="NumberButtonClicked" BackgroundColor="White" FontSize="Large" TextColor="Black" Text="8" Grid.Column="1" Grid.Row="2"/>
-                        <Button Clicked="NumberButtonClicked" BackgroundColor="White" FontSize="Large" TextColor="Black" Text="9" Grid.Column="2" Grid.Row="2"/>
-                        <Button Clicked="NumberButtonClicked" BackgroundColor="White" FontSize="Large" TextColor="Black" Text="0" Grid.Column="1" Grid.Row="3"/>
-                        <AbsoluteLayout Grid.Column="2" Grid.Row="3">
-                            <ImageButton Clicked="DeleteSymbol" BackgroundColor="Transparent" x:Name="delete"  AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5, .5, .4, .4" />
-                        </AbsoluteLayout>
-                        <Button Clicked="DeleteSymbol" BackgroundColor="Transparent" Grid.Column="2" Grid.Row="3"/>
-                    </Grid>
-                </Frame>
-            </AbsoluteLayout>
 
+                <Label FontSize="Large" Text="введите код" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Grid.Column="0" Grid.Row="1"/>
+
+
+                <Label Text="@nickname" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Grid.Column="0" Grid.Row="3" />
+
+
+                <Grid HorizontalOptions="Fill" Grid.Column="0" Grid.Row="5">
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width=".5*" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width=".5*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    
+
+                    <Frame BackgroundColor="Black" Margin="0" CornerRadius="30" Padding="2" Grid.Column="1" Grid.Row="0">
+                        <Frame x:Name="circle1" BackgroundColor="#FFF7EC" WidthRequest="5" HeightRequest="50" CornerRadius="30"/>
+                    </Frame>
+                    <Frame BackgroundColor="Black" Margin="0" CornerRadius="30" Padding="2" Grid.Column="2" Grid.Row="0">
+                        <Frame x:Name="circle2" BackgroundColor="#FFF7EC" WidthRequest="5" HeightRequest="50" CornerRadius="30"/>
+                    </Frame>
+                    <Frame BackgroundColor="Black" Margin="0" CornerRadius="30" Padding="2" Grid.Column="3" Grid.Row="0">
+                        <Frame x:Name="circle3" BackgroundColor="#FFF7EC" WidthRequest="5" HeightRequest="50" CornerRadius="30"/>
+                    </Frame>
+                    <Frame BackgroundColor="Black" Margin="0" CornerRadius="30" Padding="2" Grid.Column="4" Grid.Row="0">
+                        <Frame x:Name="circle4" BackgroundColor="#FFF7EC" WidthRequest="5" HeightRequest="50" CornerRadius="30"/>
+                    </Frame> 
+
+                </Grid>
+
+
+                <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0" Grid.Column="0" Grid.Row="7">
+                    <Frame  AbsoluteLayout.LayoutBounds=".5, 1, .86, .2" AbsoluteLayout.LayoutFlags="All" BackgroundColor="white"/>
+                    <Frame Grid.Column="0" Grid.Row="3" AbsoluteLayout.LayoutBounds=".5, .2, .86, 1" CornerRadius="30" AbsoluteLayout.LayoutFlags="All" Padding="30">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height=".25*"/>
+                                <RowDefinition Height=".25*"/>
+                                <RowDefinition Height=".25*"/>
+                                <RowDefinition Height=".25*"/>
+                            </Grid.RowDefinitions>
+                            <Button Clicked="NumberButtonClicked" BackgroundColor="White" FontSize="Large" TextColor="Black" Text="1" Grid.Column="0" Grid.Row="2"/>
+                            <Button Clicked="NumberButtonClicked" BackgroundColor="White" FontSize="Large" TextColor="Black" Text="2" Grid.Column="1" Grid.Row="2"/>
+                            <Button Clicked="NumberButtonClicked" BackgroundColor="White" FontSize="Large" TextColor="Black" Text="3" Grid.Column="2" Grid.Row="2"/>
+                            <Button Clicked="NumberButtonClicked" BackgroundColor="White" FontSize="Large" TextColor="Black" Text="4" Grid.Column="0" Grid.Row="1"/>
+                            <Button Clicked="NumberButtonClicked" BackgroundColor="White" FontSize="Large" TextColor="Black" Text="5" Grid.Column="1" Grid.Row="1"/>
+                            <Button Clicked="NumberButtonClicked" BackgroundColor="White" FontSize="Large" TextColor="Black" Text="6" Grid.Column="2" Grid.Row="1"/>
+                            <Button Clicked="NumberButtonClicked" BackgroundColor="White" FontSize="Large" TextColor="Black" Text="7" Grid.Column="0" Grid.Row="0"/>
+                            <Button Clicked="NumberButtonClicked" BackgroundColor="White" FontSize="Large" TextColor="Black" Text="8" Grid.Column="1" Grid.Row="0"/>
+                            <Button Clicked="NumberButtonClicked" BackgroundColor="White" FontSize="Large" TextColor="Black" Text="9" Grid.Column="2" Grid.Row="0"/>
+                            <Button Clicked="NumberButtonClicked" BackgroundColor="White" FontSize="Large" TextColor="Black" Text="0" Grid.Column="1" Grid.Row="3"/>
+                            <AbsoluteLayout Grid.Column="2" Grid.Row="3">
+                                <ImageButton Clicked="DeleteSymbol" BackgroundColor="Transparent" x:Name="delete"  AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5, .5, .4, .4" />
+                            </AbsoluteLayout>
+                            <Button Clicked="DeleteSymbol" BackgroundColor="Transparent" Grid.Column="2" Grid.Row="3"/>
+                        </Grid>
+                    </Frame>
+                </AbsoluteLayout>
+
+
+            </Grid>
+            
+          
 
         </StackLayout>
     </ContentPage.Content>

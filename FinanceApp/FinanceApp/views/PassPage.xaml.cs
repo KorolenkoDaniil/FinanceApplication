@@ -113,7 +113,7 @@ namespace FinanceApp.views
                         break;
                     }
             }
-      
+
         }
     }
 }
