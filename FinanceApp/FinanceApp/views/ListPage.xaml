@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="FinanceApp.views.ListPage">
 
 
@@ -17,7 +17,7 @@
                             <Label x:Name="MonthLabel" TextColor="Black" Grid.Column="0" />
                             <Frame Margin="30,0,0,0" BackgroundColor="Aqua" Grid.Column="0"/>
                         </Grid>
-                     
+
                     </StackLayout>
                 </Frame>
             </AbsoluteLayout>
@@ -36,8 +36,8 @@
                 <Label x:Name="DateLabel" Text="date" TextColor="Black" HorizontalOptions="Center" Grid.Column="1" />
                 <ImageButton x:Name="arrow_R" Grid.Column="2"  BackgroundColor="Transparent"/>
             </Grid>
-           
-            
+
+
             <Frame CornerRadius="30" Padding="3" WidthRequest="300" HeightRequest="100" BackgroundColor="#F5E3D9">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -60,16 +60,16 @@
             </Frame>
 
         </StackLayout >
-                <Button Padding="1, 0, 0, 2" Text="+" TextColor="Black" FontSize="32" BackgroundColor="#F5E3D9" CornerRadius="30" WidthRequest="60" HeightRequest="60" AbsoluteLayout.LayoutBounds=".94, .87" AbsoluteLayout.LayoutFlags="PositionProportional" />
+        <Button Padding="1, 0, 0, 2" Text="+" TextColor="Black" FontSize="32" BackgroundColor="#F5E3D9" CornerRadius="30" WidthRequest="60" HeightRequest="60" AbsoluteLayout.LayoutBounds=".94, .87" AbsoluteLayout.LayoutFlags="PositionProportional" />
         <Frame AbsoluteLayout.LayoutBounds="0, 1, 1, .09" AbsoluteLayout.LayoutFlags="All" BackgroundColor="White" Padding="0">
             <FlexLayout HorizontalOptions="Fill" FlowDirection="LeftToRight" JustifyContent="SpaceEvenly">
-                
+
                 <ImageButton x:Name="card" Clicked="ToCAccountsPage" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
                 <ImageButton x:Name="cathegory"  WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
                 <ImageButton x:Name="list" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
                 <ImageButton x:Name="diagram" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
                 <ImageButton Clicked="ToCalculatorPage" x:Name="change" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
-                
+
             </FlexLayout>
         </Frame>
     </AbsoluteLayout>
