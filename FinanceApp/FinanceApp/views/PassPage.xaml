@@ -1,18 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="FinanceApp.views.PassPage">
     <ContentPage.Content >
         <StackLayout BackgroundColor="#FFF7EC" Padding="0">
             <Grid VerticalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height=".025*"/> <!--пропуск-->
+                    <RowDefinition Height=".025*"/>
+                    <!--пропуск-->
                     <RowDefinition Height=".04*"/>
-                    <RowDefinition Height=".005*"/><!--пропуск-->
+                    <RowDefinition Height=".005*"/>
+                    <!--пропуск-->
                     <RowDefinition Height=".04*"/>
-                    <RowDefinition Height=".04*"/> <!--пропуск-->
+                    <RowDefinition Height=".04*"/>
+                    <!--пропуск-->
                     <RowDefinition Height=".2*"/>
-                    <RowDefinition Height=".15*"/> <!--пропуск-->
+                    <RowDefinition Height=".15*"/>
+                    <!--пропуск-->
                     <RowDefinition Height=".5*"/>
                 </Grid.RowDefinitions>
 
@@ -37,7 +41,7 @@
                         <RowDefinition Height="30"/>
                         <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
-                    
+
 
                     <Frame BackgroundColor="Black" Margin="0" CornerRadius="30" Padding="2" Grid.Column="1" Grid.Row="0">
                         <Frame x:Name="circle1" BackgroundColor="#FFF7EC" WidthRequest="5" HeightRequest="50" CornerRadius="30"/>
@@ -50,7 +54,7 @@
                     </Frame>
                     <Frame BackgroundColor="Black" Margin="0" CornerRadius="30" Padding="2" Grid.Column="4" Grid.Row="0">
                         <Frame x:Name="circle4" BackgroundColor="#FFF7EC" WidthRequest="5" HeightRequest="50" CornerRadius="30"/>
-                    </Frame> 
+                    </Frame>
 
                 </Grid>
 
@@ -85,8 +89,8 @@
 
 
             </Grid>
-            
-          
+
+
 
         </StackLayout>
     </ContentPage.Content>

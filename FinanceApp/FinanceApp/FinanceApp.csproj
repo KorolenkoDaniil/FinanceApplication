@@ -12,6 +12,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="views\PageOfDecision.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="views\PageOfDecision.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="icons\arrow_to_l.png" />
     <None Remove="icons\arrow_to_r.png" />
     <None Remove="icons\card.png" />

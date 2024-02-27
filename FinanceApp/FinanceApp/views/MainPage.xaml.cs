@@ -1,23 +1,21 @@
-﻿using FinanceApp.views;
+﻿using FinanceApp.classes;
+using FinanceApp.views;
 using System;
-using Xamarin.Forms;
-using FinanceApp.classes;
 using System.IO;
-
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 namespace FinanceApp
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
     {
-        public string theme = "#FFF7EC";
-        User user = new User();
-
         public MainPage()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            Logo.Source = ImageSource.FromResource("FinanceApp.icons.Money.png");
+            NavigationPage.SetHasNavigationBar(this, false); 
             ToPassPage();
-            BindingContext = this;
         }
-   
         public async void ToPassPage()
         {
             if (File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "AccessFile")))
@@ -26,28 +24,9 @@ namespace FinanceApp
             }
         }
 
-        private void PrintSize(object sender, EventArgs e)
+        private async void ToSignUpPage(object sender, EventArgs e)
         {
-            double width = Application.Current.MainPage.Width;
-            double height = Application.Current.MainPage.Height;
-            Console.WriteLine(width);
-            Console.WriteLine(height);
-            Console.WriteLine("!!!!!!!!!!!!!!!!!!!!");
-        }
-
-        private async void ToPageOfCommonInformation(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(entryPass1.Text) || string.IsNullOrEmpty(entryPass2.Text) || string.IsNullOrEmpty(entryName.Text) || string.IsNullOrEmpty(entryEmail.Text)) return;
-           
-            if (!string.Equals(entryPass1.Text, entryPass2.Text)) return;
-           
-
-            User newuser = new User(entryName.Text, entryEmail.Text, entryPass1.Text, theme);
-            user = newuser;
-           
-            await Navigation.PushAsync(new ListPage());
-            
-            File.WriteAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "AccessFile"), $"{entryEmail.Text} {entryPass1.Text}");
+            await Navigation.PushAsync(new RegistrationPage());
         }
     }
 }
