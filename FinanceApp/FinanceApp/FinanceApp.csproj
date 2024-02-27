@@ -26,6 +26,7 @@
     <None Remove="icons\diagram1.png" />
     <None Remove="icons\list.png" />
     <None Remove="icons\list1.png" />
+    <None Remove="icons\Money.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,6 +46,7 @@
     <EmbeddedResource Include="icons\diagram1.png" />
     <EmbeddedResource Include="icons\list.png" />
     <EmbeddedResource Include="icons\list1.png" />
+    <EmbeddedResource Include="icons\Money.png" />
   </ItemGroup>
 
   <ItemGroup>

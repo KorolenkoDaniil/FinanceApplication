@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="FinanceApp.PageOfDecision">
+
+
+    <AbsoluteLayout BackgroundColor="#303030">
+        <Grid VerticalOptions="Fill" HorizontalOptions="Fill" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".1*"/>
+                <RowDefinition Height=".15*"/>
+
+                <RowDefinition Height=".1*"/>
+                <RowDefinition Height=".1825*"/>
+
+                <RowDefinition Height=".01*"/>
+                <RowDefinition Height=".1825*"/>
+
+                <RowDefinition Height=".125*"/>
+                <RowDefinition Height=".15*"/>
+            </Grid.RowDefinitions>
+
+
+            <Image x:Name="Logo" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="1" Grid.Column="0"/>
+
+            <Frame  Grid.Row="3" Grid.Column="0" WidthRequest="75" HeightRequest="75" CornerRadius="60" VerticalOptions="Center" HorizontalOptions="Center">
+                
+            </Frame>
+
+            <Frame  Grid.Row="5" Grid.Column="0" WidthRequest="75" HeightRequest="75" CornerRadius="60" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+
+            <!--<Grid Grid.Row="7" Grid.Column="0" BackgroundColor="#303030">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".6*" />
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>-->
+        </Grid>
+
+
+        <Frame AbsoluteLayout.LayoutFlags="All" BackgroundColor="White" AbsoluteLayout.LayoutBounds="1, 1, 1, .1"/>
+        <Frame AbsoluteLayout.LayoutFlags="All" BackgroundColor="#303030" AbsoluteLayout.LayoutBounds="0, .98, 1, .2" Rotation="15"/>
+
+        <Frame AbsoluteLayout.LayoutFlags="All" BackgroundColor="Bisque" AbsoluteLayout.LayoutBounds="2.3, 4.7, .8, .8" Rotation="165"/>
+       
+    </AbsoluteLayout>
+</ContentPage>

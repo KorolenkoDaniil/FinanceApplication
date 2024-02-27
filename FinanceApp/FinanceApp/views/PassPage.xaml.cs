@@ -71,7 +71,7 @@ namespace FinanceApp.views
                 case 4:
                     {
                         circle4.BackgroundColor = Color.Black;
-                        if (string.Equals("1234", passCode)) await Navigation.PushAsync(new ListPage());
+                        if (string.Equals("1234", passCode)) await Navigation.PushAsync(new PageOfDecision());
                         else
                         {
                             DeleteSymbol();
