@@ -12,7 +12,9 @@ namespace FinanceApp.views
         User user = new User();
         public RegistrationPage()
         {
-            InitializeComponent(); BindingContext = this;
+            InitializeComponent(); 
+            BindingContext = this;
+            NavigationPage.SetHasNavigationBar(this, false);
         }
         private void PrintSize(object sender, EventArgs e)
         {
@@ -26,9 +28,10 @@ namespace FinanceApp.views
             if (string.IsNullOrEmpty(entryPass1.Text) || string.IsNullOrEmpty(entryPass2.Text) || string.IsNullOrEmpty(entryName.Text) || string.IsNullOrEmpty(entryEmail.Text)) return;
             if (!string.Equals(entryPass1.Text, entryPass2.Text)) return;
 
-            User newuser = new User(entryName.Text, entryEmail.Text, entryPass1.Text, theme); user = newuser;
+            User newuser = new User(entryName.Text, entryEmail.Text, entryPass1.Text, theme); 
+            user = newuser;
             await Navigation.PushAsync(new ListPage());
-            File.WriteAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "AccessFile"), $"{entryEmail.Text} {entryPass1.Text}");
+            //File.WriteAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "AccessFile"), $"{entryEmail.Text} {entryPass1.Text}");
         }
     }
 }

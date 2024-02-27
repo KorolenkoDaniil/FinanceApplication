@@ -5,12 +5,42 @@
 
 
     <!--<AbsoluteLayout BackgroundColor="{Binding Color}">-->
-    <AbsoluteLayout BackgroundColor="#FFF7EC">
-        <Label Text="Sign up" TextColor="Black" FontSize="16" AbsoluteLayout.LayoutBounds=".2, .15" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-        <Entry x:Name="entryEmail" TextColor="Black" Placeholder="the email" PlaceholderColor="Gray" HorizontalOptions ="Fill" AbsoluteLayout.LayoutBounds=".36, .15, .6, .1" AbsoluteLayout.LayoutFlags="All" />
-        <Entry x:Name="entryName" TextColor="Black" Placeholder="name" PlaceholderColor="Gray" HorizontalOptions ="Fill" AbsoluteLayout.LayoutBounds=".36, .3, .6, .1" AbsoluteLayout.LayoutFlags="All"/>
-        <Entry x:Name="entryPass1" TextColor="Black" Placeholder="pasword" PlaceholderColor="Gray" HorizontalOptions ="Fill" AbsoluteLayout.LayoutBounds=".36, .4, .6, .1" AbsoluteLayout.LayoutFlags="All"/>
-        <Entry x:Name="entryPass2" TextColor="Black" Placeholder="repeat pasword" PlaceholderColor="Gray" HorizontalOptions ="Fill" AbsoluteLayout.LayoutBounds=".36, .5, .6, .1" AbsoluteLayout.LayoutFlags="All"/>
-        <Button Clicked="ToPageOfCommonInformation" Text="Sign Up" CornerRadius="16" HorizontalOptions="Fill" Grid.Column="0" Grid.Row="5" AbsoluteLayout.LayoutBounds=".36, .7, .8, .08" AbsoluteLayout.LayoutFlags="All"/>
-    </AbsoluteLayout>
+    <StackLayout BackgroundColor="#FFF7EC">
+        <Grid Margin="50">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".1*" />
+                <RowDefinition Height=".077*" />
+
+                <RowDefinition Height=".05*" />
+                <RowDefinition Height=".077*" />
+
+                <RowDefinition Height=".01*" />
+                <RowDefinition Height=".077*" />
+
+                <RowDefinition Height=".01*" />
+                <RowDefinition Height=".077*" />
+
+                <RowDefinition Height=".01*" />
+                <RowDefinition Height=".077*" />
+
+                <RowDefinition Height=".077*" />
+                <RowDefinition Height=".077*" />
+
+                <RowDefinition Height=".077*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".75*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Label Text="Sign up" FontSize="Large" TextColor="Black" Grid.Row="1" Grid.Column="0"/>
+            <Entry x:Name="entryEmail" TextColor="Black" Placeholder="enter your email" PlaceholderColor="Gray" HorizontalOptions ="Fill" Grid.Row="3" Grid.Column="0"/>
+            <Entry x:Name="entryName" TextColor="Black" Placeholder="enter nickname" PlaceholderColor="Gray" HorizontalOptions ="Fill" Grid.Row="5" Grid.Column="0"/>
+            <Entry x:Name="entryPass1" TextColor="Black" Placeholder="enter pasword" PlaceholderColor="Gray" HorizontalOptions ="Fill" Grid.Row="7" Grid.Column="0"/>
+            <Entry x:Name="entryPass2" TextColor="Black" Placeholder="repeat pasword" PlaceholderColor="Gray" HorizontalOptions ="Fill" Grid.Row="9" Grid.Column="0"/>
+            <Button Clicked="ToPageOfCommonInformation" Text="Sign Up" CornerRadius="16" HorizontalOptions="Fill" Grid.Row="11" Grid.Column="0"/>
+        </Grid>
+        
+    </StackLayout>
 </ContentPage>
