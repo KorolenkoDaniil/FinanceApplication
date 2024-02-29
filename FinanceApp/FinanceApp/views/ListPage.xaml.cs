@@ -1,4 +1,4 @@
-﻿using FinanceApp.classes;
+﻿using FinanceApp.classes.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 
 namespace FinanceApp.views
 {
-	public partial class ListPage : ContentPage
+    public partial class ListPage : ContentPage
 	{
         User user = new User();
 

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceApp.Android", "Finan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceApp.iOS", "FinanceApp\FinanceApp.iOS\FinanceApp.iOS.csproj", "{F982B8D9-F1E8-493B-9967-FB6B1D5DE0C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceApp", "FinanceApp\FinanceApp\FinanceApp.csproj", "{92B8E141-F0E2-44FC-A74B-D7BFCD88E713}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceApp", "FinanceApp\FinanceApp\FinanceApp.csproj", "{92B8E141-F0E2-44FC-A74B-D7BFCD88E713}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
