@@ -1,12 +1,22 @@
-﻿namespace FinS.Models
+﻿using SQLite;
+
+namespace FinS.Models
 {
-    public static class UserRepository
+    public class UserRepository
     {
+        string pathToUserDB;
+        SQLiteConnection UserDB;
 
-
-        public static bool SaveUser(User suer)
+        public UserRepository()
         {
-            
+            pathToUserDB = "D://FinAppDataBases//Users.db";
+            UserDB = new SQLiteConnection(pathToUserDB);
+            UserDB.CreateTable<User>();
+        }
+
+        public void SaveUser(User user)
+        {
+            UserDB.Insert(user);
         }
     }
 }

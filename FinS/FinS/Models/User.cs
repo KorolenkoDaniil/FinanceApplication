@@ -1,7 +1,11 @@
-﻿namespace FinS.Models
+﻿using SQLite;
+
+namespace FinS.Models
 {
+    [Table("Users")]
     public class User
     {
+        private int id;
         private string? name;
         private string? email;
         private string? password;
@@ -15,14 +19,18 @@
             Password = password;
             Theme = theme;
         }
-        public string Theme
+
+
+        [AutoIncrement, PrimaryKey]
+        public int Id
         {
-            get => theme;
+            get => id;
             set
             {
-                theme = value;
+                id = value;
             }
         }
+        
         public string Name
         {
             get => name;
@@ -39,10 +47,18 @@
             get => password;
             set { password = value; }
         }
+        public string Theme
+        {
+            get => theme;
+            set
+            {
+                theme = value;
+            }
+        }
 
         public override string ToString()
         {
-            return $"{Name} {email} {password}";
+            return $"{Name} {Email} {Password}";
         }
     }
 }

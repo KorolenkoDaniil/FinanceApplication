@@ -7,6 +7,7 @@ namespace FinanceApp.classes.User
     public class User
     {
         private string name;
+        private int id;
         private string email;
         private string password;
         private string theme;
@@ -18,6 +19,16 @@ namespace FinanceApp.classes.User
             Email = email;
             Password = password;
             Theme = theme;
+        }
+
+       
+        public int Id
+        {
+            get => id;
+            set
+            {
+                id = value;
+            }
         }
         public string Theme
         {

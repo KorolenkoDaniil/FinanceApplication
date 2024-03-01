@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace FinanceApp.classes.User
 {
@@ -13,17 +15,15 @@ namespace FinanceApp.classes.User
 
         static UserRepository() { }
 
-        public async static void SaveUser(User newUser)
+        public async static Task<bool> SaveUser(User newUser)
         {
             string json = JsonConvert.SerializeObject(newUser);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            using (var content = new MultipartFormDataContent())
-            {
-                // Добавляем JSON-строку как контент
-                content.Add(new StringContent(json), "user", "UserInJSON.json");
+            HttpResponseMessage response = await client.PostAsync(Links.Registration, content);
 
-                HttpResponseMessage response = await client.PostAsync(Links.Registration, content);
-            }
+            if (response.IsSuccessStatusCode) return true;
+            return false;
         }
     }
 }
