@@ -24,7 +24,7 @@
             <Image x:Name="Logo" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="1" Grid.Column="0"/>
 
             <Frame BackgroundColor="Bisque" Grid.Row="3" Grid.Column="0" Padding="3" WidthRequest="120" HeightRequest="120" CornerRadius="100" VerticalOptions="Center" HorizontalOptions="Center">
-                <Button  Text="Sign In" WidthRequest="115" HeightRequest="115" CornerRadius="100" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Button Clicked="ToSignInPage" Text="Sign In" WidthRequest="115" HeightRequest="115" CornerRadius="100" VerticalOptions="Center" HorizontalOptions="Center" />
             </Frame>
 
             <Frame BackgroundColor="Bisque" Grid.Row="5" Grid.Column="0" Padding="3" WidthRequest="120" HeightRequest="120" CornerRadius="100" VerticalOptions="Center" HorizontalOptions="Center">

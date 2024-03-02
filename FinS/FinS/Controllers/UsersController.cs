@@ -1,5 +1,7 @@
 ﻿using FinS.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Text;
 
 namespace FinS.Controllers
 {
@@ -13,26 +15,22 @@ namespace FinS.Controllers
         public UserRepository UserRepository = new UserRepository();
 
         [HttpPost]
-        public async Task<IActionResult> Registration([FromBody] User user)
+        public async Task<User> Registration([FromBody] User user)
         {
 
-            try
-            {
-                Console.WriteLine(user);
-                UserRepository.SaveUser(user);
-                return Ok("Регистрация прошла успешно!");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest("Ошибка при обработке JSON: " + ex.Message);
-            }
+            Console.WriteLine(user);
+            user.Id = UserRepository.SaveUser(user);
+            Console.WriteLine(user);
+            return user;
         }
+
 
         [HttpPost]
-        public async Task<IActionResult> GetBy()
+        public async Task<User> Authorisation(string email, string password)
         {
-
-            
+            return UserRepository.SearchByEmailAndPassword(email, password); ;
         }
+
+
     }
 }

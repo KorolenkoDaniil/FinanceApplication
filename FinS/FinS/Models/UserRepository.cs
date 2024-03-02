@@ -14,9 +14,20 @@ namespace FinS.Models
             UserDB.CreateTable<User>();
         }
 
-        public void SaveUser(User user)
+        public int SaveUser(User user)
         {
             UserDB.Insert(user);
+            User foundUser = UserDB.Table<User>().FirstOrDefault(u => u.Email == user.Email);
+            return foundUser.Id;
         }
+
+        public User SearchByEmailAndPassword(string email, string password)
+        {
+            User foundUser = UserDB.Table<User>().FirstOrDefault(u => u.Email == email && u.Password == password);
+            return foundUser;
+        }
+
+
+
     }
 }

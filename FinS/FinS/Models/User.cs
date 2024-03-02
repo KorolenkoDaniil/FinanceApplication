@@ -58,7 +58,7 @@ namespace FinS.Models
 
         public override string ToString()
         {
-            return $"{Name} {Email} {Password}";
-        }
+            return $"{Name} {Email} {Password} {Id}";
+        } 
     }
 }

@@ -64,5 +64,11 @@ namespace FinanceApp.classes.User
                 password = value;
             }
         }
+
+
+        public override string ToString()
+        {
+            return $"{Name} {Email} {Password} {Id}";
+        }
     }
 }

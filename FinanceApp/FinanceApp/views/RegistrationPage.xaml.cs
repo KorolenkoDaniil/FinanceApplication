@@ -36,8 +36,12 @@ namespace FinanceApp.views
             if (!string.Equals(entryPass1.Text, entryPass2.Text)) { Clean(); return; }
 
             User newuser = new User(entryName.Text, entryEmail.Text, entryPass1.Text, theme);
-            bool result = await UserRepository.SaveUser(newuser);
-            if (result) await Navigation.PushAsync(new ListPage());
+            newuser = await UserRepository.SaveUser(newuser);
+            
+            if (newuser != null)
+            {
+                await Navigation.PushAsync(new ListPage());
+            }
             else
             {
                 Clean();

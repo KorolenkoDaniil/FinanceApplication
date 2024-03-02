@@ -28,5 +28,10 @@ namespace FinanceApp
         {
             await Navigation.PushAsync(new RegistrationPage());
         }
+
+        private async void ToSignInPage(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AuthorisationPage());
+        }
     }
 }
