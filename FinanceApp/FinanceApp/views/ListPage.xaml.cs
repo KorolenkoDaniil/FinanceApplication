@@ -1,12 +1,7 @@
 ﻿using FinanceApp.classes.User;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+
 
 namespace FinanceApp.views
 {
@@ -22,10 +17,10 @@ namespace FinanceApp.views
             list.Source = ImageSource.FromResource("FinanceApp.icons.list1.png");
 			diagram.Source = ImageSource.FromResource("FinanceApp.icons.diagram.png");
 			change.Source = ImageSource.FromResource("FinanceApp.icons.change.png");
-			arrow_L.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_l.png");
-			arrow_R.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_r.png");
-            DateLabel.Text = DateTime.Now.ToString("dd MMMM");
-            MonthLabel.Text = DateTime.Now.ToString("MMMM");
+			//arrow_L.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_l.png");
+			//arrow_R.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_r.png");
+   //         DateLabel.Text = DateTime.Now.ToString("dd MMMM");
+            MonthLabel.Text = DateTime.Now.ToString("MMMM yyyy");
             NavigationPage.SetHasNavigationBar(this, false);
 
         }
@@ -37,9 +32,21 @@ namespace FinanceApp.views
             list.Source = ImageSource.FromResource("FinanceApp.icons.list1.png");
             diagram.Source = ImageSource.FromResource("FinanceApp.icons.diagram.png");
             change.Source = ImageSource.FromResource("FinanceApp.icons.change.png");
-            arrow_L.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_l.png");
-            arrow_R.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_r.png");
+            //arrow_L.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_l.png");
+            //arrow_R.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_r.png");
             user = person;
+        }
+        public ListPage(DateTime dateTime)
+        {
+            InitializeComponent();
+            card.Source = ImageSource.FromResource("FinanceApp.icons.card.png");
+            cathegory.Source = ImageSource.FromResource("FinanceApp.icons.cathegories.png");
+            list.Source = ImageSource.FromResource("FinanceApp.icons.list1.png");
+            diagram.Source = ImageSource.FromResource("FinanceApp.icons.diagram.png");
+            change.Source = ImageSource.FromResource("FinanceApp.icons.change.png");
+            //arrow_L.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_l.png");
+            //arrow_R.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_r.png");
+            MonthLabel.Text = dateTime.ToString("MMM yyyy");
         }
 
 
@@ -52,5 +59,38 @@ namespace FinanceApp.views
         {
             await Navigation.PushAsync(new AccountsPage());
         }
+
+        private async void ToMonthSelectionPage(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MonthSelectionPage()); 
+        }
+
+        //private void PreviousDate(object sender, EventArgs e)
+        //{
+        //    DateTime DateInLabel = DateTime.Parse(DateLabel.Text);
+        //    DateInLabel = DateInLabel.AddDays(-1);
+
+        //    if (DateInLabel.Day == 1)
+        //    {
+        //        DateInLabel = new DateTime(DateInLabel.Year, DateInLabel.Month, 1).AddDays(-1);
+        //    }
+        //    DateLabel.Text = DateInLabel.ToString("dd MMMM");
+        //}
+
+        //private void NextDate(object sender, EventArgs e)
+        //{
+        //    DateTime DateInLabel = DateTime.Parse(DateLabel.Text);
+        //    DateInLabel = DateInLabel.AddDays(1);
+
+        //    if (DateInLabel.Day == 1)
+        //    {
+        //        DateInLabel = new DateTime(DateInLabel.Year, DateInLabel.Month, 1).AddMonths(1);
+        //    }
+        //    DateLabel.Text = DateInLabel.ToString("dd MMMM");
+        //}
+
+
+
+
     }
 }

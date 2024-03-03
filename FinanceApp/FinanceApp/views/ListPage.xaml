@@ -4,138 +4,146 @@
              x:Class="FinanceApp.views.ListPage">
 
 
+    <AbsoluteLayout>
+        <StackLayout BackgroundColor="#FFF7EC" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
 
-    <StackLayout BackgroundColor="#FFF7EC">
-
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height=".07*"/> 
-                <RowDefinition Height=".01*"/> <!--пропуск-->
-                <RowDefinition Height=".03*"/> 
-                <RowDefinition Height=".008*"/> <!--пропуск-->
-                <RowDefinition Height=".03*"/>
-                <RowDefinition Height=".02*"/> <!--пропуск-->
-                <RowDefinition Height=".17*"/>
-                <RowDefinition Height=".077*"/> <!--пропуск-->
-                <RowDefinition Height=".311*"/>
-                <RowDefinition Height=".077*"/> <!--пропуск-->
-                <RowDefinition Height=".077*"/>
-                <RowDefinition Height=".01*"/> <!--пропуск-->
-                <RowDefinition Height=".1*"/> 
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-
-            <Grid AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Grid.Row="0" Grid.Column="0">
-                <StackLayout Grid.Row="0" Grid.Column="0">
-                    <Frame Padding="5" HorizontalOptions="Fill" >
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="0.05*"/>
-                                <ColumnDefinition Width="0.6*"/>
-                                <ColumnDefinition Width="0.3*"/>
-                                <ColumnDefinition Width="0.05*"/>
-                            </Grid.ColumnDefinitions>
-                            <Label Text="Транзакции" FontSize="Body" VerticalOptions="Center" TextColor="Black" Grid.Column="1"  Grid.Row="0"/>
-                            <Button x:Name="MonthLabel" TextColor="Black" CornerRadius="40" FontSize="Micro" HeightRequest="40" Grid.Column="2"  Grid.Row="0" BackgroundColor="#ffecc4" VerticalOptions="Center" HorizontalOptions="Center"  />
-                        </Grid>
-                    </Frame>
-                </StackLayout>
-            </Grid>
-
-
-
-            <Label Text="Общий баланс" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="2" Grid.Column="0"/>
-
-
-
-            <Grid Grid.Row="4" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-
-
-                <ImageButton x:Name="arrow_L" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent"/>
-                <Label x:Name="DateLabel" Text="date" TextColor="Black" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" />
-                <ImageButton x:Name="arrow_R" Grid.Column="2" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center"/>
-            </Grid>
-
-
-
-
-            <Frame CornerRadius="30" Padding="5" Grid.Row="6" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" Margin="25, 0, 25, 0" BackgroundColor="#F5E3D9">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Frame CornerRadius="30" WidthRequest="250" HeightRequest="100" BackgroundColor="White" Grid.Column="0">
-                        <StackLayout HorizontalOptions="Center">
-                            <Label HorizontalOptions="Center" TextColor="Black" Text="Расходы"/>
-                            <Label HorizontalOptions="Center" TextColor="Black" Text="00,00"/>
-                        </StackLayout>
-                    </Frame>
-                    <Frame CornerRadius="30" WidthRequest="250" HeightRequest="100" BackgroundColor="White" Grid.Column="1">
-                        <StackLayout HorizontalOptions="Center">
-                            <Label HorizontalOptions="Center" TextColor="Black" Text="Доходы"/>
-                            <Label HorizontalOptions="Center" TextColor="Black" Text="00,00"/>
-                        </StackLayout>
-                    </Frame>
-                </Grid>
-            </Frame>
-
-
-            <Label Text="место для списка" TextColor="Black" Grid.Row="8" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center"/>
-
-
-            <Grid Grid.Row="10" Grid.Column="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width=".6*"/>
-                    <ColumnDefinition Width="60"/>
-                    <ColumnDefinition Width=".1*"/>
-                </Grid.ColumnDefinitions>
+            <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="60" />
+                    <RowDefinition Height=".07*"/>
+                    <RowDefinition Height=".06*"/>
+                    <!--пропуск-->
+                    <!--<RowDefinition Height=".03*"/>
+                    <RowDefinition Height=".008*"/>-->
+                    <!--пропуск-->
+                    <!--<RowDefinition Height=".03*"/>
+                    <RowDefinition Height=".02*"/>-->
+                    <!--пропуск-->
+                    <RowDefinition Height=".3*"/>
+                    <RowDefinition Height=".087*"/>
+                    <!--пропуск-->
+                    <RowDefinition Height=".211*"/>
+                    <RowDefinition Height=".077*"/>
+                    <!--пропуск-->
+                    <RowDefinition Height=".077*"/>
+                    <RowDefinition Height=".01*"/>
+                    <!--пропуск-->
+                    <RowDefinition Height=".1*"/>
                 </Grid.RowDefinitions>
-                
-                <Button Padding="1, 0, 0, 2" Text="+" TextColor="Black" FontSize="32" BackgroundColor="#F5E3D9" CornerRadius="40" Grid.Row="0" Grid.Column="1" />
-            </Grid>
-          
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
 
-
-
-            <Frame Grid.Row="12" Grid.Column="0" BackgroundColor="White" Padding="0" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand"  >
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width=".05*"/>
-                        <ColumnDefinition Width=".18*"/>
-                        <ColumnDefinition Width=".18*"/>
-                        <ColumnDefinition Width=".18*"/>
-                        <ColumnDefinition Width=".18*"/>
-                        <ColumnDefinition Width=".18*"/>
-                        <ColumnDefinition Width=".05*"/>
-                    </Grid.ColumnDefinitions>
-                    
-                    <ImageButton x:Name="card" Clicked="ToCAccountsPage" Grid.Row="0" Grid.Column="1" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
-                    <ImageButton x:Name="cathegory"  WidthRequest="50" Grid.Row="0" Grid.Column="2" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
-                    <ImageButton x:Name="list" WidthRequest="50" Grid.Row="0" Grid.Column="3" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
-                    <ImageButton x:Name="diagram" WidthRequest="50" HeightRequest="50" Grid.Row="0" Grid.Column="4" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
-                    <ImageButton Clicked="ToCalculatorPage" x:Name="change" WidthRequest="50" HeightRequest="50" Grid.Row="0" Grid.Column="5" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <StackLayout Grid.Row="0" Grid.Column="0">
+                        <Frame Padding="5" HorizontalOptions="Fill" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.05*"/>
+                                    <ColumnDefinition Width="0.6*"/>
+                                    <ColumnDefinition Width="0.3*"/>
+                                    <ColumnDefinition Width="0.05*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Транзакции" FontSize="Body" VerticalOptions="Center" TextColor="Black" Grid.Column="1"  Grid.Row="0"/>
+                                <Button x:Name="MonthLabel" Clicked="ToMonthSelectionPage" TextColor="Black" CornerRadius="40" FontSize="Micro" HeightRequest="40" Grid.Column="2"  Grid.Row="0" BackgroundColor="#ffecc4" VerticalOptions="Center" HorizontalOptions="Center"  />
+                            </Grid>
+                        </Frame>
+                    </StackLayout>
                 </Grid>
-                   
-            </Frame>
-
-        </Grid>
 
 
-      
 
-       
-        
-    </StackLayout>
+                <!--<Label Text="Общий баланс" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="2" Grid.Column="0"/>-->
+
+
+
+                <!--<Grid Grid.Row="4" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <ImageButton x:Name="arrow_L" Clicked="PreviousDate" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" WidthRequest="40" HeightRequest="40"/>
+                    <Label x:Name="DateLabel" Text="date" TextColor="Black" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <ImageButton x:Name="arrow_R" Clicked="NextDate" Grid.Column="2" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="40" HeightRequest="40"/>
+                </Grid>-->
+
+
+
+
+                <Frame CornerRadius="30" Padding="7" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" Margin="25, 0, 25, 0" BackgroundColor="#F5E3D9">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".5*"/>
+                            <ColumnDefinition Width=".5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height=".3*"/>
+                            <RowDefinition Height=".7*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Text="общий баланс" FontSize="Medium" Grid.Column="0" Grid.Row="0"  TextColor="Black" VerticalOptions="Center" Margin="3"/>
+                        <Label Text="баланс" FontSize="Medium" Grid.Column="1" Grid.Row="0" TextColor="Black" VerticalOptions="Center" Margin="3"/>
+                        <Frame CornerRadius="40" WidthRequest="250" HeightRequest="100" BackgroundColor="White" Grid.Column="0" Grid.Row="1">
+                            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                <Label HorizontalOptions="Center"  TextColor="Black" Text="Расходы"/>
+                                <Label HorizontalOptions="Center"  TextColor="Black" Text="00,00"/>
+                            </StackLayout>
+                        </Frame>
+                        <Frame CornerRadius="40" WidthRequest="250" HeightRequest="100" BackgroundColor="White" Grid.Column="1" Grid.Row="1">
+                            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                <Label HorizontalOptions="Center" TextColor="Black" Text="Доходы"/>
+                                <Label HorizontalOptions="Center" TextColor="Black" Text="00,00"/>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </Frame>
+
+
+                <Label Text="место для списка" TextColor="Black" Grid.Row="4" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+
+                <Grid Grid.Row="6" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".6*"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width=".1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+
+                    <Button Padding="1, 0, 0, 2" Text="+" TextColor="Black" FontSize="32" BackgroundColor="#F5E3D9" CornerRadius="40" Grid.Row="0" Grid.Column="1" />
+                </Grid>
+
+
+
+
+
+                <Frame Grid.Row="8" Grid.Column="0" BackgroundColor="White" Padding="0" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand"  >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".05*"/>
+                            <ColumnDefinition Width=".18*"/>
+                            <ColumnDefinition Width=".18*"/>
+                            <ColumnDefinition Width=".18*"/>
+                            <ColumnDefinition Width=".18*"/>
+                            <ColumnDefinition Width=".18*"/>
+                            <ColumnDefinition Width=".05*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <ImageButton x:Name="card" Clicked="ToCAccountsPage" Grid.Row="0" Grid.Column="1" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
+                        <ImageButton x:Name="cathegory"  WidthRequest="50" Grid.Row="0" Grid.Column="2" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
+                        <ImageButton x:Name="list" WidthRequest="50" Grid.Row="0" Grid.Column="3" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
+                        <ImageButton x:Name="diagram" WidthRequest="50" HeightRequest="50" Grid.Row="0" Grid.Column="4" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
+                        <ImageButton Clicked="ToCalculatorPage" x:Name="change" WidthRequest="50" HeightRequest="50" Grid.Row="0" Grid.Column="5" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
+                    </Grid>
+
+                </Frame>
+
+            </Grid>
+        </StackLayout>
+        <!--<Frame AbsoluteLayout.LayoutFlags="XProportional" AbsoluteLayout.LayoutBounds=".8, 45, 200, 100"></Frame>-->
+    </AbsoluteLayout>
 </ContentPage>

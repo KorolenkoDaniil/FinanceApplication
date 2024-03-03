@@ -12,10 +12,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="views\MonthPage.xaml.cs" />
     <Compile Remove="views\PageOfDecision.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Remove="views\MonthPage.xaml" />
     <EmbeddedResource Remove="views\PageOfDecision.xaml" />
   </ItemGroup>
 
@@ -92,6 +94,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="views\ConvertPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="views\MonthSelectionPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="views\PassPage.xaml">

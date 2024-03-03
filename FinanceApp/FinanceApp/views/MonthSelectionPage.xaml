@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinanceApp.views.MonthSelectionPage">
+    <ContentPage.Content>
+
+        <StackLayout VerticalOptions="Fill" BackgroundColor="#FFF7EC">
+            <Grid VerticalOptions="Fill">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".07*"/>
+                    <RowDefinition Height=".05*"/>
+                    <RowDefinition Height=".5*"/>
+                    <RowDefinition Height=".38*"/>
+                    
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <StackLayout Grid.Row="0" Grid.Column="0">
+                        <Frame Padding="5" HorizontalOptions="Fill" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.05*"/>
+                                    <ColumnDefinition Width="0.6*"/>
+                                    <ColumnDefinition Width="0.3*"/>
+                                    <ColumnDefinition Width="0.05*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Транзакции" FontSize="Body" VerticalOptions="Center" TextColor="Black" Grid.Column="1"  Grid.Row="0"/>
+                                <Button x:Name="MonthLabel" Clicked="ToListPage" TextColor="Black" CornerRadius="40" FontSize="Micro" HeightRequest="40" Grid.Column="2"  Grid.Row="0" BackgroundColor="#ffecc4" VerticalOptions="Center" HorizontalOptions="Center"  />
+                            </Grid>
+                        </Frame>
+                    </StackLayout>
+                </Grid>
+                <Frame Grid.Row="2" Grid.Column="0" HorizontalOptions="Fill" Margin="25, 0, 25, 0" Padding="1" BackgroundColor="#F5E3D9" CornerRadius="20">
+                    <Frame BackgroundColor="#FFF7EC" CornerRadius="10">
+                        <StackLayout>
+                            <Grid Padding="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".5*"/>
+                                    <ColumnDefinition Width=".5*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"/>
+                                </Grid.RowDefinitions>
+                                <Button Text="за месяц" Grid.Column="0" Grid.Row="0" CornerRadius="20"/>
+                                <Button Text="за год" Grid.Column="1" Grid.Row="0" CornerRadius="20"/>
+                            </Grid>
+
+                            <Grid Padding="0, 20">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".1*"/>
+                                    <ColumnDefinition Width=".27*"/>
+                                    <ColumnDefinition Width=".27*"/>
+                                    <ColumnDefinition Width=".27*"/>
+                                    <ColumnDefinition Width=".1*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="25"/>
+                                </Grid.RowDefinitions>
+
+                                <ImageButton BackgroundColor="Transparent" x:Name="arrow_L" Clicked="PreviousYear" Grid.Column="1" Grid.Row="0" HorizontalOptions="Center" />
+                                <Label x:Name="LabelYear" Grid.Column="2" Grid.Row="0" HorizontalOptions="Center" TextColor="Black"/>
+                                <ImageButton Clicked="NextYear" BackgroundColor="Transparent" x:Name="arrow_R" Grid.Column="3" Grid.Row="0" HorizontalOptions="Center"/>
+                            </Grid>
+                            <Grid Padding="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".25*"/>
+                                    <ColumnDefinition Width=".25*"/>
+                                    <ColumnDefinition Width=".25*"/>
+                                    <ColumnDefinition Width=".25*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height=".33*"/>
+                                    <RowDefinition Height=".33*"/>
+                                    <RowDefinition Height=".33*"/>
+                                </Grid.RowDefinitions>
+                                <Button x:Name="m1" TextColor="Black" Grid.Column="0" Grid.Row="0" BackgroundColor="Transparent" Clicked="NewMonth" FontSize="Caption"/>
+                                <Button x:Name="m2" TextColor="Black" Grid.Column="1" Grid.Row="0" BackgroundColor="Transparent" Clicked="NewMonth" FontSize="Caption"/>
+                                <Button x:Name="m3" TextColor="Black" Grid.Column="2" Grid.Row="0" BackgroundColor="Transparent" Clicked="NewMonth" FontSize="Caption"/>
+                                <Button x:Name="m4" TextColor="Black" Grid.Column="3" Grid.Row="0" BackgroundColor="Transparent" Clicked="NewMonth" FontSize="Caption"/>
+                                <Button x:Name="m5" TextColor="Black" Grid.Column="0" Grid.Row="1" BackgroundColor="Transparent" Clicked="NewMonth" FontSize="Caption"/>
+                                <Button x:Name="m6" TextColor="Black" Grid.Column="1" Grid.Row="1" BackgroundColor="Transparent" Clicked="NewMonth" FontSize="Caption"/>
+                                <Button x:Name="m7" TextColor="Black" Grid.Column="2" Grid.Row="1" BackgroundColor="Transparent" Clicked="NewMonth" FontSize="Caption"/>
+                                <Button x:Name="m8" TextColor="Black" Grid.Column="3" Grid.Row="1" BackgroundColor="Transparent" Clicked="NewMonth" FontSize="Caption"/>
+                                <Button x:Name="m9" TextColor="Black" Grid.Column="0" Grid.Row="2" BackgroundColor="Transparent" Clicked="NewMonth" FontSize="Caption"/>
+                                <Button x:Name="m10" TextColor="Black" Grid.Column="1" Grid.Row="2" BackgroundColor="Transparent" Clicked="NewMonth" FontSize="Caption"/>
+                                <Button x:Name="m11" TextColor="Black" Grid.Column="2" Grid.Row="2" BackgroundColor="Transparent" Clicked="NewMonth" FontSize="Caption"/>
+                                <Button x:Name="m12" TextColor="Black" Grid.Column="3" Grid.Row="2" BackgroundColor="Transparent" Clicked="NewMonth" FontSize="Caption"/>
+                            </Grid>
+
+
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
