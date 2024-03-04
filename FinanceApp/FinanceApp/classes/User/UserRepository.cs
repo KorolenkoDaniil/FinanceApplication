@@ -28,7 +28,6 @@ namespace FinanceApp.classes.User
             {
                 string answer = await response.Content.ReadAsStringAsync();
                 User user = JsonConvert.DeserializeObject<User>(answer);
-                //Console.WriteLine($"{user} !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                 return user;
             }
             else
@@ -54,7 +53,7 @@ namespace FinanceApp.classes.User
             if (response.IsSuccessStatusCode) {
                 string answer = await response.Content.ReadAsStringAsync();
                 User user = JsonConvert.DeserializeObject<User>(answer);
-                Console.WriteLine($"{user} !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                
                 return user;
             }
             else

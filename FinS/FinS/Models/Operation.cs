@@ -1,7 +1,4 @@
-﻿using System;
-using System.ComponentModel;
-
-namespace FinanceApp.classes.FinanceOpertaion
+﻿namespace FinS.Models
 {
     class Operation
     {
@@ -13,11 +10,12 @@ namespace FinanceApp.classes.FinanceOpertaion
         private string wallet;
         private string cathegory;
         private string description;
-     
+
 
         public Operation() { }
-        public Operation(int userId, DateTime date, bool profit, decimal sum, string wallet, string cathegory, string description)
+        public Operation(int id, int userId, DateTime date, bool profit, decimal sum, string wallet, string cathegory, string description)
         {
+            Id = id;
             UserID = userId;
             Date = date;
             Wallet = wallet;
@@ -54,31 +52,30 @@ namespace FinanceApp.classes.FinanceOpertaion
 
         public decimal Sum
         {
-            get => sum; 
+            get => sum;
             set => sum = value;
         }
 
         public string Wallet
         {
-            get => wallet; 
+            get => wallet;
             set => wallet = value;
         }
 
         public string Cathegory
         {
-            get => cathegory; 
+            get => cathegory;
             set => cathegory = value;
         }
 
         public string Description
         {
-            get => description; 
+            get => description;
             set => description = value;
         }
 
 
 
         public override string ToString() => $"{Id} {UserID} {Date} {Profit} {Sum} {Wallet} {Cathegory} {Description}";
-       
     }
 }
