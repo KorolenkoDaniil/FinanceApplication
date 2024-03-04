@@ -19,7 +19,7 @@ namespace FinS.Controllers
         {
 
             Console.WriteLine(user);
-            user.Id = UserRepository.SaveUser(user);
+            user = UserRepository.SaveUser(user);
             Console.WriteLine(user);
             return user;
         }

@@ -15,6 +15,9 @@ namespace FinanceApp.views
 	public partial class MonthSelectionPage : ContentPage
 	{
         public DateTime CurrentDate = DateTime.Now;
+
+        public bool MonthPeriod = true;
+
 		public MonthSelectionPage ()
 		{
 			InitializeComponent ();
@@ -98,7 +101,27 @@ namespace FinanceApp.views
 
         private async void ToListPage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ListPage(CurrentDate));
+            await Navigation.PushAsync(new ListPage(CurrentDate, MonthPeriod));
         }
+
+        private void ChangePeriodToMonth(object sender, EventArgs e)
+        {
+            MonthPeriod = false;
+            MonthButton.BackgroundColor = Color.FromHex("#fff1de");
+            YearButton.BackgroundColor = Color.FromHex("#FFF7EC");
+            Frame_L.Padding = 2;
+            Frame_R.Padding = 1;
+        }
+        private void ChangePeriodToYear(object sender, EventArgs e)
+        {
+            MonthPeriod = false;
+            YearButton.BackgroundColor = Color.FromHex("#fff1de");
+            MonthButton.BackgroundColor = Color.FromHex("#FFF7EC");
+            Frame_R.Padding = 2;
+            Frame_L.Padding = 1;
+        }
+
+
+
     }
 }

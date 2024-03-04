@@ -5,7 +5,6 @@ namespace FinS.Models
     [Table("Users")]
     public class User
     {
-        private int id;
         private string? name;
         private string? email;
         private string? password;
@@ -20,16 +19,6 @@ namespace FinS.Models
             Theme = theme;
         }
 
-
-        [AutoIncrement, PrimaryKey]
-        public int Id
-        {
-            get => id;
-            set
-            {
-                id = value;
-            }
-        }
         
         public string Name
         {
@@ -37,6 +26,8 @@ namespace FinS.Models
 
             set { name = value; }
         }
+
+        [PrimaryKey, Unique]
         public string Email
         {
             get => email;
@@ -58,7 +49,7 @@ namespace FinS.Models
 
         public override string ToString()
         {
-            return $"{Name} {Email} {Password} {Id}";
+            return $"{Name} {Email} {Password}";
         } 
     }
 }

@@ -36,7 +36,7 @@ namespace FinanceApp.views
             //arrow_R.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_r.png");
             user = person;
         }
-        public ListPage(DateTime dateTime)
+        public ListPage(DateTime dateTime, bool MonthPeriod)
         {
             InitializeComponent();
             card.Source = ImageSource.FromResource("FinanceApp.icons.card.png");
