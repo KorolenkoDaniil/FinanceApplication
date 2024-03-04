@@ -1,33 +1,35 @@
 ﻿using SQLite;
-
 namespace FinS.Models
 {
     [Table("Users")]
     public class User
     {
+        private int id;
         private string? name;
         private string? email;
         private string? password;
         private string? theme;
-
         public User() { }
         public User(string name, string email, string password, string theme)
         {
-            Name = name;
-            Email = email;
-            Password = password;
-            Theme = theme;
+            Name = name; Email = email;
+            Password = password; Theme = theme;
         }
-
-        
+        [AutoIncrement, PrimaryKey]
+        public int Id
+        {
+            get => id; set
+            {
+                id = value;
+            }
+        }
         public string Name
         {
             get => name;
-
             set { name = value; }
         }
 
-        [PrimaryKey, Unique]
+        [Unique]
         public string Email
         {
             get => email;
@@ -35,8 +37,7 @@ namespace FinS.Models
         }
         public string Password
         {
-            get => password;
-            set { password = value; }
+            get => password; set { password = value; }
         }
         public string Theme
         {
@@ -46,10 +47,9 @@ namespace FinS.Models
                 theme = value;
             }
         }
-
         public override string ToString()
         {
-            return $"{Name} {Email} {Password}";
-        } 
+            return $"{Name} {Email} {Password} {Id}";
+        }
     }
 }

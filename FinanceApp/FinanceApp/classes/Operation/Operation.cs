@@ -1,74 +1,77 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace FinanceApp.classes.FinanceOpertaion
 {
     class Operation
     {
-        private string name;
         private int id;
-        private string email;
-        private string password;
-        private string theme;
+        private int userId;
+        private DateTime date;
+        private bool type;
+        private decimal sum;
+        private string wallet;
+        private string cathegory;
+        private string description;
+     
 
         public Operation() { }
-        public Operation(string name, string email, string password, string theme)
-        {
-            Name = name;
-            Email = email;
-            Password = password;
-            Theme = theme;
-        }
+        //public Operation()
+        //{
+          
+        //}
 
 
         public int Id
         {
             get => id;
-            set
-            {
-                id = value;
-            }
+            set => id = value;
         }
-        public string Theme
+
+        public int UserID
         {
-            get => theme;
-            set
-            {
-                theme = value;
-            }
+            get => userId;
+            set => userId = value;
         }
-        public string Name
+
+        public DateTime Date
         {
-            get => name;
-            set
-            {
-                if (Validator.ValidateName(value, 30)) name = value;
-                else { throw new Exception("никнейм не прошел проверку"); }
-            }
+            get => date;
+            set => date = value;
         }
-        public string Email
+
+        public bool Type
         {
-            get => email;
-            set
-            {
-                if (Validator.ValidateEmail(value)) email = value;
-                else { throw new Exception("проверьте введенную почту"); }
-            }
+            get => type;
+            set => type = value;
         }
-        public string Password
+
+        public decimal Sum
         {
-            get => password;
-            set
-            {
-                password = value;
-            }
+            get => sum; 
+            set => sum = value;
+        }
+
+        public string Wallet
+        {
+            get => wallet; 
+            set => wallet = value;
+        }
+
+        public string Cathegory
+        {
+            get => cathegory; 
+            set => cathegory = value;
+        }
+
+        public string Description
+        {
+            get => description; 
+            set => description = value;
         }
 
 
-        public override string ToString()
-        {
-            return $"{Name} {Email} {Password} {Id}";
-        }
+
+        public override string ToString() => $"";
+       
     }
 }
