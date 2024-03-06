@@ -1,5 +1,7 @@
 ﻿using FinanceApp.classes.User;
+using FinanceApp.classes.Wallet;
 using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
 
 
@@ -8,10 +10,12 @@ namespace FinanceApp.views
     public partial class ListPage : ContentPage
 	{
         User user = new User();
+        List<Wallet> WalletsList = new List<Wallet>();
 
 		public ListPage ()
 		{
 			InitializeComponent ();
+
 			card.Source = ImageSource.FromResource("FinanceApp.icons.card.png");
             cathegory.Source = ImageSource.FromResource("FinanceApp.icons.cathegories.png");
             list.Source = ImageSource.FromResource("FinanceApp.icons.list1.png");
@@ -21,12 +25,16 @@ namespace FinanceApp.views
 			//arrow_R.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_r.png");
    //         DateLabel.Text = DateTime.Now.ToString("dd MMMM");
             MonthLabel.Text = DateTime.Now.ToString("MMMM yyyy");
+          
             NavigationPage.SetHasNavigationBar(this, false);
 
         }
         public ListPage(User person)
         {
+            Console.WriteLine("2 !!!!!!!!!!!!!!");
+
             InitializeComponent();
+            InitialiseWalltList(person);
             card.Source = ImageSource.FromResource("FinanceApp.icons.card.png");
             cathegory.Source = ImageSource.FromResource("FinanceApp.icons.cathegories.png");
             list.Source = ImageSource.FromResource("FinanceApp.icons.list1.png");
@@ -34,8 +42,23 @@ namespace FinanceApp.views
             change.Source = ImageSource.FromResource("FinanceApp.icons.change.png");
             //arrow_L.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_l.png");
             //arrow_R.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_r.png");
+            
             user = person;
         }
+
+        public async void InitialiseWalltList(User person)
+        {
+            Console.WriteLine("3 !!!!!!!!!!!!!!");
+
+            WalletsList = await WalletRepository.GetWallets(person.Id);
+
+            //foreach (Wallet wallet in WalletsList)
+            //{
+            //    Console.WriteLine(wallet);
+            //}
+        }
+
+
         public ListPage(DateTime dateTime, bool MonthPeriod)
         {
             InitializeComponent();

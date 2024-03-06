@@ -20,6 +20,7 @@ namespace FinanceApp.views
             list.Source = ImageSource.FromResource("FinanceApp.icons.list.png");
             diagram.Source = ImageSource.FromResource("FinanceApp.icons.diagram.png");
             change.Source = ImageSource.FromResource("FinanceApp.icons.change.png");
+
         }
 
         private async void ToListPage(object sender, EventArgs e)

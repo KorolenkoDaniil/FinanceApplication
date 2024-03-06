@@ -21,18 +21,19 @@ namespace FinanceApp.views
 
         private async void ToListPage(object sender, EventArgs e)
         {
-            //User user = await UserRepository.AuthoriseUser(entryEmail.Text, entryPaasword.Text);
-            User user = new User()
-            {
-                Password = "t",
-                Name = "t",
-                Email = "t@gmail.com",
-                Id = 1,
-                Theme = "#FFF7EC"
-            };
+            User user = await UserRepository.AuthoriseUser(entryEmail.Text, entryPaasword.Text);
+            //User user = new User()
+            //{
+            //    Password = "t",
+            //    Name = "t",
+            //    Email = "t@gmail.com",
+            //    Id = 1,
+            //    Theme = "#FFF7EC"
+            //};
             if (user != null)
             {
-                await Navigation.PushAsync(new ListPage());
+                Console.WriteLine("1 !!!!!!!!!!!!!!");
+                await Navigation.PushAsync(new ListPage(user));
             }
             else
             {

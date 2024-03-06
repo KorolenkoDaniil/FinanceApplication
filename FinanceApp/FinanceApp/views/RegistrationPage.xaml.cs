@@ -1,4 +1,5 @@
 ﻿using FinanceApp.classes.User;
+using FinanceApp.classes.Wallet;
 using System;
 using System.IO;
 using Xamarin.Forms;
@@ -25,7 +26,6 @@ namespace FinanceApp.views
         }
 
 
-        //метод перехода на страницу общей информации
         private async void ToPageOfCommonInformation(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(entryPass1.Text) || string.IsNullOrEmpty(entryPass2.Text) || string.IsNullOrEmpty(entryName.Text) || string.IsNullOrEmpty(entryEmail.Text))
@@ -37,10 +37,18 @@ namespace FinanceApp.views
 
             User newuser = new User(entryName.Text, entryEmail.Text, entryPass1.Text, theme);
             newuser = await UserRepository.SaveUser(newuser);
+
             
             if (newuser != null)
             {
-                await Navigation.PushAsync(new ListPage());
+                Wallet wallet1 = new Wallet("кошелек 1", 0, newuser.Id);
+                Wallet wallet2 = new Wallet("кошелек 2", 0, newuser.Id);
+                bool w1 = await WalletRepository.SaveWallet(wallet1);
+                bool w2 = await WalletRepository.SaveWallet(wallet2);
+
+                if (w1 && w2)
+                    await Navigation.PushAsync(new ListPage());
+                else Clean();
             }
             else
             {
@@ -56,10 +64,9 @@ namespace FinanceApp.views
             entryEmail.Text = "";
             entryName.Text = "";
             entryPass1.Placeholder = "enter pasword";
-            entryPass2.Text = "repeat pasword";
-            entryEmail.Text = "enter your email";
-            entryName.Text = "enter nickname";
-
+            entryPass2.Placeholder = "repeat pasword";
+            entryEmail.Placeholder = "enter your email";
+            entryName.Placeholder = "enter nickname";
         }
     }
 }

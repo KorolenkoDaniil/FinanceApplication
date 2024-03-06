@@ -64,5 +64,6 @@
         <AbsoluteLayout x:Name="TransferPage" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
             <Label Text="трансфер страница"/>
         </AbsoluteLayout>
+        
     </AbsoluteLayout>
 </ContentPage>

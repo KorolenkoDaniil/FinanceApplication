@@ -15,6 +15,8 @@ namespace FinS.Models
             Name = name; Email = email;
             Password = password; Theme = theme;
         }
+
+
         [AutoIncrement, PrimaryKey]
         public int Id
         {
