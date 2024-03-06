@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinanceApp.views.AddOperationPage">
+    <AbsoluteLayout>
+        <AbsoluteLayout x:Name="SelectionPage" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+            <Grid AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="85"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.3*"/>
+                    <RowDefinition Height="85"/>
+                    <RowDefinition Height="85"/>
+                    <RowDefinition Height="85"/>
+                    <RowDefinition Height="85"/>
+                    <RowDefinition Height="0.1*"/>
+                </Grid.RowDefinitions>
+
+                <Label Text="перечислить" VerticalOptions="Center" FontSize="Medium" HorizontalOptions="End" Grid.Column="0" Grid.Row="1"/>
+                <Label Text="доход" VerticalOptions="Center" FontSize="Medium" HorizontalOptions="End" Grid.Column="0" Grid.Row="2"/>
+                <Label Text="расход" VerticalOptions="Center" FontSize="Medium" HorizontalOptions="End" Grid.Column="0" Grid.Row="3"/>
+
+                <Button Clicked="buttonTochangePage" HorizontalOptions="End" Margin="15" HeightRequest="85" WidthRequest="85" CornerRadius="10" Grid.Column="1" Grid.Row="1"/>
+                <Button Clicked="buttonToIncomePage" HorizontalOptions="End" Margin="15" HeightRequest="85" WidthRequest="85" CornerRadius="10" Grid.Column="1" Grid.Row="2"/>
+                <Button Clicked="buttonToConsumePage" HorizontalOptions="End" Margin="15" HeightRequest="85" WidthRequest="85" CornerRadius="10" Grid.Column="1" Grid.Row="3"/>
+                <Button HorizontalOptions="End" Margin="15" HeightRequest="85" WidthRequest="85" CornerRadius="10" Grid.Column="1" Grid.Row="4"/>
+
+            </Grid>
+        </AbsoluteLayout>
+        <AbsoluteLayout x:Name="IncomePage" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" BackgroundColor="White">
+            <Frame CornerRadius="30" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5, .2, .9, .7" BackgroundColor="#FFF7EC">
+                <StackLayout>
+                    <Label Text="Доходы" FontSize="Large" HorizontalTextAlignment="Center"/>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height=".2*"/>
+                            <RowDefinition Height=".2*"/>
+                            <RowDefinition Height=".2*"/>
+
+                            <RowDefinition Height=".2*"/>
+                            <RowDefinition Height=".2*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".3*"/>
+                            <ColumnDefinition Width=".7*"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <Entry x:Name="EntrySum" Keyboard="Numeric" Placeholder="сумма" PlaceholderColor="#8f8f8f" FontSize="Medium" Grid.Row="0" Grid.Column="1"/>
+                        <Picker x:Name="WalletPicker" Grid.Row="1" Grid.Column="1"/>
+                        <Picker x:Name="CathegoryPicker" Grid.Row="2" Grid.Column="1"/>
+                        <Entry x:Name="EntryDescription" Placeholder="подробности" PlaceholderColor="#8f8f8f" FontSize="Medium" Grid.Row="3" Grid.Column="1"/>
+                        <DatePicker x:Name="Datepicker" TextColor="#8f8f8f" Grid.Row="4" Grid.Column="1"/>
+
+                    </Grid>
+                </StackLayout>
+            </Frame>
+        </AbsoluteLayout>
+        <AbsoluteLayout x:Name="ConsumptionPage" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+            <Label Text="страница дохода"/>
+        </AbsoluteLayout>
+        <AbsoluteLayout x:Name="TransferPage" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+            <Label Text="трансфер страница"/>
+        </AbsoluteLayout>
+    </AbsoluteLayout>
+</ContentPage>

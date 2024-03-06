@@ -4,7 +4,7 @@
              x:Class="FinanceApp.views.AuthorisationPage">
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name="entryEmail" Placeholder="entry your email"/>
+            <Entry x:Name="entryEmail" Placeholder="entry your email" Keyboard="Email"/>
             <Entry x:Name="entryPaasword" Placeholder="entry your password"/>
             <Button x:Name="button" Text="sign in" Clicked="ToListPage"/>
         </StackLayout>

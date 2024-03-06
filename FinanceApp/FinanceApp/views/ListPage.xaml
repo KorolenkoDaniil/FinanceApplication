@@ -108,13 +108,13 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width=".6*"/>
                         <ColumnDefinition Width="60"/>
-                        <ColumnDefinition Width=".1*"/>
+                        <ColumnDefinition Width=".05*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="60" />
                     </Grid.RowDefinitions>
 
-                    <Button Padding="1, 0, 0, 2" Text="+" TextColor="Black" FontSize="32" BackgroundColor="#F5E3D9" CornerRadius="40" Grid.Row="0" Grid.Column="1" />
+                    <Button x:Name="Add" Clicked="AddOperation" Padding="1, 0, 0, 2" Text="+" TextColor="Black" FontSize="32" BackgroundColor="#F5E3D9" CornerRadius="10" Grid.Row="0" Grid.Column="1" />
                 </Grid>
 
 

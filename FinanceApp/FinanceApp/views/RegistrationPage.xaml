@@ -35,7 +35,7 @@
 
 
             <Label Text="Sign up" FontSize="Large" TextColor="Black" Grid.Row="1" Grid.Column="0"/>
-            <Entry x:Name="entryEmail" TextColor="Black" Placeholder="enter your email" PlaceholderColor="Gray" HorizontalOptions ="Fill" Grid.Row="3" Grid.Column="0"/>
+            <Entry x:Name="entryEmail" TextColor="Black" Placeholder="enter your email" Keyboard="Email" PlaceholderColor="Gray" HorizontalOptions ="Fill" Grid.Row="3" Grid.Column="0"/>
             <Entry x:Name="entryName" TextColor="Black" Placeholder="enter nickname" PlaceholderColor="Gray" HorizontalOptions ="Fill" Grid.Row="5" Grid.Column="0"/>
             <Entry x:Name="entryPass1" TextColor="Black" Placeholder="enter pasword" PlaceholderColor="Gray" HorizontalOptions ="Fill" Grid.Row="7" Grid.Column="0"/>
             <Entry x:Name="entryPass2" TextColor="Black" Placeholder="repeat pasword" PlaceholderColor="Gray" HorizontalOptions ="Fill" Grid.Row="9" Grid.Column="0"/>

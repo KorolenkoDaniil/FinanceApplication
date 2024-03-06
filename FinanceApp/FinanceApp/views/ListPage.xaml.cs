@@ -65,6 +65,11 @@ namespace FinanceApp.views
             await Navigation.PushAsync(new MonthSelectionPage()); 
         }
 
+        private async void AddOperation(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddOperationPage());
+        }
+
         //private void PreviousDate(object sender, EventArgs e)
         //{
         //    DateTime DateInLabel = DateTime.Parse(DateLabel.Text);
