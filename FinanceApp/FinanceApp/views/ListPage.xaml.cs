@@ -42,20 +42,15 @@ namespace FinanceApp.views
             change.Source = ImageSource.FromResource("FinanceApp.icons.change.png");
             //arrow_L.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_l.png");
             //arrow_R.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_r.png");
-            
+            NavigationPage.SetHasNavigationBar(this, false);
+
+
             user = person;
         }
 
         public async void InitialiseWalltList(User person)
         {
-            Console.WriteLine("3 !!!!!!!!!!!!!!");
-
             WalletsList = await WalletRepository.GetWallets(person.Id);
-
-            //foreach (Wallet wallet in WalletsList)
-            //{
-            //    Console.WriteLine(wallet);
-            //}
         }
 
 
@@ -67,20 +62,18 @@ namespace FinanceApp.views
             list.Source = ImageSource.FromResource("FinanceApp.icons.list1.png");
             diagram.Source = ImageSource.FromResource("FinanceApp.icons.diagram.png");
             change.Source = ImageSource.FromResource("FinanceApp.icons.change.png");
-            //arrow_L.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_l.png");
-            //arrow_R.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_r.png");
             MonthLabel.Text = dateTime.ToString("MMM yyyy");
         }
 
 
         private async void ToCalculatorPage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CalculatorPage());
+            await Navigation.PushAsync(new CalculatorPage(user));
         }
 
         private async void ToCAccountsPage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AccountsPage());
+            await Navigation.PushAsync(new AccountsPage(user));
         }
 
         private async void ToMonthSelectionPage(object sender, EventArgs e)

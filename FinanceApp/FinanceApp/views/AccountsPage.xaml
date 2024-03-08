@@ -3,11 +3,79 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinanceApp.views.AccountsPage">
     <AbsoluteLayout BackgroundColor="#FFF7EC">
-        <StackLayout>
-          
-        </StackLayout>
+        <Grid BackgroundColor="#FFF7EC" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,.9">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".07*"/>
+                <RowDefinition Height=".1*"/>
+                <RowDefinition Height=".63*"/>
+                <!--<RowDefinition Height=".1*"/>-->
+            </Grid.RowDefinitions>
+
+            <Frame Grid.Row="0" Grid.Column="0" Padding="25, 0, 0, 0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".1*"/>
+                        <ColumnDefinition Width="*"/>
+                        <!--<ColumnDefinition Width=".07*"/>-->
+                    </Grid.ColumnDefinitions>
+
+                    <Image x:Name="arrow_to_left" Grid.Row="0" Grid.Column="0" Scale=".4" HeightRequest="10"/>
+                    <Label Text="Счета" TextColor="Black" FontSize="Body" Grid.Row="0" Grid.Column="1" VerticalOptions="Center"/>
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="#FFF7EC" Padding="25, 0, 0, 0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".4*"/>
+                        <RowDefinition Height=".6*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Label Text="Итоговый баланс" TextColor="#c7cbd1" FontSize="Body" Grid.Row="0" Grid.Column="0"/>
+                    <Label x:Name="Sum" Text="" TextColor="Black" FontSize="30" Grid.Row="1" Grid.Column="0"/>
+                </Grid>
+            </Frame>
+
+            <CollectionView Grid.Row="2" Grid.Column="0" x:Name="WalletsCollection" SelectionMode="Single" SelectionChanged="OnItemSelected" >
+                <CollectionView.ItemTemplate >
+                    <DataTemplate >
+                        <StackLayout BackgroundColor="#FFF7EC" Padding="20">
+                            <Frame BackgroundColor="red" HeightRequest="100" CornerRadius="20" Padding="10">
+                                <StackLayout>
+                                    <Grid >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width=".2*"/>
+                                            <ColumnDefinition Width=".75*"/>
+                                            <ColumnDefinition Width=".05*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Text="тут картинка" Grid.Row="0" Grid.Column="0"></Label>
+                                        <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="1"></Label>
+                                        <Label Text="стрtk" Grid.Row="0" Grid.Column="2"></Label>
+                                    </Grid>
+
+                                    <BoxView HeightRequest="1" BackgroundColor="Gray" HorizontalOptions="FillAndExpand"/>
+
+                                    <Grid >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width=".5*"/>
+                                            <ColumnDefinition Width=".5*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Text="Остаток средств" FontSize="Medium" HorizontalOptions="Start"  Grid.Row="0" Grid.Column="0" />
+                                        <Label Text="{Binding Amount}" Grid.Row="0" Grid.Column="1" VerticalOptions="Center"  HorizontalOptions="End"/>
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+        <Button x:Name="Add" Clicked="Add_Clicked" Padding="1, 0, 0, 2" Text="+" TextColor="Black" FontSize="32" BackgroundColor="#F5E3D9" CornerRadius="10" AbsoluteLayout.LayoutBounds=".9, .85, 60, 60" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
         <Frame AbsoluteLayout.LayoutBounds="0, 1, 1, .09" AbsoluteLayout.LayoutFlags="All" BackgroundColor="White" Padding="0">
-            
+
             <FlexLayout HorizontalOptions="Fill" FlowDirection="LeftToRight" JustifyContent="SpaceEvenly">
                 <ImageButton x:Name="card" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
                 <ImageButton x:Name="cathegory" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
@@ -15,7 +83,13 @@
                 <ImageButton x:Name="diagram" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
                 <ImageButton x:Name="change" Clicked="change_Clicked" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
             </FlexLayout>
-            
+
         </Frame>
     </AbsoluteLayout>
 </ContentPage>
+    
+    
+    
+    
+    
+  

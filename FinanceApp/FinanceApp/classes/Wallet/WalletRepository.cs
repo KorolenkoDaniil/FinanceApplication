@@ -26,7 +26,7 @@ namespace FinanceApp.classes.Wallet
 
         public async static Task<List<Wallet>> GetWallets(int userId)
         {
-            Console.WriteLine("4 !!!!!!!!!!!!!!");
+          
             Dictionary<string, string> UserId = new Dictionary<string, string>
             {
                 {"id", userId.ToString()}
@@ -35,12 +35,9 @@ namespace FinanceApp.classes.Wallet
             FormUrlEncodedContent form = new FormUrlEncodedContent(UserId);
             HttpResponseMessage response = await client.PostAsync(Links.GetWallets, form);
 
-            Console.WriteLine("5 !!!!!!!!!!!!!!");
-
 
             if (response.IsSuccessStatusCode)
             {
-                Console.WriteLine("6 !!!!!!!!!!!!!!");
                 string StringListWallets = await response.Content.ReadAsStringAsync();
                 List<Wallet> UsersWalletList = JsonConvert.DeserializeObject<List<Wallet>>(StringListWallets);
                 foreach (Wallet walet in UsersWalletList)

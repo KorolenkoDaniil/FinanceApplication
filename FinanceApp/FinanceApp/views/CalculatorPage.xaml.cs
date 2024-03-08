@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinanceApp.classes.User;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,8 @@ namespace FinanceApp.views
 {
     public partial class CalculatorPage : ContentPage
     {
-        public CalculatorPage()
+        User user;
+        public CalculatorPage(User user)
         {
             InitializeComponent(); 
             card.Source = ImageSource.FromResource("FinanceApp.icons.card.png");
@@ -18,6 +20,7 @@ namespace FinanceApp.views
             diagram.Source = ImageSource.FromResource("FinanceApp.icons.diagram.png");
             change.Source = ImageSource.FromResource("FinanceApp.icons.change1.png");
             delete.Source = ImageSource.FromResource("FinanceApp.icons.delete-right.png");
+            this.user = user;
         }
         
 
@@ -33,12 +36,12 @@ namespace FinanceApp.views
 
         private async void ToConvertPage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CovertPage());
+            await Navigation.PushAsync(new CovertPage(user));
         }
 
         private async void ToAccountsPage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AccountsPage());
+            await Navigation.PushAsync(new AccountsPage(user));
         }
     }
 }
