@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinanceApp.views.AccountsPage">
     <AbsoluteLayout BackgroundColor="#FFF7EC">
-        <Grid BackgroundColor="#FFF7EC" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,.9">
+        <Grid x:Name="AllCardsPage" BackgroundColor="#FFF7EC" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,.9">
             <Grid.RowDefinitions>
                 <RowDefinition Height=".07*"/>
                 <RowDefinition Height=".1*"/>
@@ -72,12 +72,12 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </Grid>
-        <Button x:Name="Add" Clicked="Add_Clicked" Padding="1, 0, 0, 2" Text="+" TextColor="Black" FontSize="32" BackgroundColor="#F5E3D9" CornerRadius="10" AbsoluteLayout.LayoutBounds=".9, .85, 60, 60" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <Button x:Name="Add" Clicked="newCardsPage" Padding="1, 0, 0, 2" Text="+" TextColor="Black" FontSize="32" BackgroundColor="#F5E3D9" CornerRadius="10" AbsoluteLayout.LayoutBounds=".9, .85, 60, 60" AbsoluteLayout.LayoutFlags="PositionProportional"/>
 
         <Frame AbsoluteLayout.LayoutBounds="0, 1, 1, .09" AbsoluteLayout.LayoutFlags="All" BackgroundColor="White" Padding="0">
 
             <FlexLayout HorizontalOptions="Fill" FlowDirection="LeftToRight" JustifyContent="SpaceEvenly">
-                <ImageButton x:Name="card" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
+                <ImageButton x:Name="card" Clicked="Reload" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
                 <ImageButton x:Name="cathegory" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
                 <ImageButton x:Name="list" Clicked="ToListPage" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
                 <ImageButton x:Name="diagram" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" />
@@ -85,6 +85,38 @@
             </FlexLayout>
 
         </Frame>
+
+        <AbsoluteLayout x:Name="NewCardPage" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, .9" >
+            <Frame CornerRadius="30" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5, .2, .9, .7" BackgroundColor="Red">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".25*"/>
+                        <RowDefinition Height=".25*"/>
+                        <RowDefinition Height=".25*"/>
+
+                        <RowDefinition Height=".25*"/>
+                        <RowDefinition Height=".25*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".3*"/>
+                        <ColumnDefinition Width=".7*"/>
+                    </Grid.ColumnDefinitions>
+                    <Entry Placeholder="название банка или света" PlaceholderColor="Gray" Grid.Row="0" Grid.Column="1"></Entry>
+                    <Entry Placeholder="Тип нового счета" PlaceholderColor="Gray" Grid.Row="1" Grid.Column="1"></Entry>
+                    <Entry Placeholder="значок" PlaceholderColor="Gray" Grid.Row="2" Grid.Column="1"></Entry>
+                    <Button Text="цвет" Grid.Row="3" Grid.Column="1" BackgroundColor="Transparent" Clicked="ToColorsPage"></Button>
+                    <Entry Placeholder="остаток средств" Keyboard="Numeric" PlaceholderColor="Gray" Grid.Row="4" Grid.Column="1"></Entry>
+                </Grid>
+            </Frame>
+        </AbsoluteLayout>
+
+        <AbsoluteLayout x:Name="ColorLayout" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <Frame   CornerRadius="30" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5, .2, .9, .7" BackgroundColor="#F5E3D9">
+                <ScrollView x:Name="ColorFrame">
+
+                </ScrollView>
+            </Frame>
+        </AbsoluteLayout>
     </AbsoluteLayout>
 </ContentPage>
     

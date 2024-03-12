@@ -1,16 +1,19 @@
-﻿using FinanceApp.classes.User;
+﻿using FinanceApp.classes;
+using FinanceApp.classes.User;
 using FinanceApp.classes.Wallet;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Xamarin.Forms;
 
 
 namespace FinanceApp.views
 {
-    public partial class ListPage : ContentPage
-	{
+    public partial class ListPage : ContentPage, INotifyPropertyChanged
+    {
         User user = new User();
         List<Wallet> WalletsList = new List<Wallet>();
+        public Color theme;
 
 		public ListPage ()
 		{
@@ -24,9 +27,11 @@ namespace FinanceApp.views
 			//arrow_L.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_l.png");
 			//arrow_R.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_r.png");
    //         DateLabel.Text = DateTime.Now.ToString("dd MMMM");
-            MonthLabel.Text = DateTime.Now.ToString("MMMM yyyy");
+           
           
             NavigationPage.SetHasNavigationBar(this, false);
+           
+
 
         }
         public ListPage(User person)
@@ -40,12 +45,18 @@ namespace FinanceApp.views
             list.Source = ImageSource.FromResource("FinanceApp.icons.list1.png");
             diagram.Source = ImageSource.FromResource("FinanceApp.icons.diagram.png");
             change.Source = ImageSource.FromResource("FinanceApp.icons.change.png");
+            settings.Source = ImageSource.FromResource("FinanceApp.icons.settings.png");
             //arrow_L.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_l.png");
             //arrow_R.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_r.png");
             NavigationPage.SetHasNavigationBar(this, false);
-
+            MonthLabel.Text = DateTime.Now.ToString("MMMM yyyy");
 
             user = person;
+            this.BindingContext = this;
+            theme = Color.FromHex(Colors.myDictionary[person.Theme]);
+            MonthLabel.BackgroundColor = theme;
+            //Console.WriteLine(Color.FromHex(Colors.myDictionary[person.Theme])); 
+            Console.WriteLine(Colors.myDictionary[person.Theme]);
         }
 
         public async void InitialiseWalltList(User person)
@@ -53,6 +64,12 @@ namespace FinanceApp.views
             WalletsList = await WalletRepository.GetWallets(person.Id);
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         public ListPage(DateTime dateTime, bool MonthPeriod)
         {

@@ -9,7 +9,7 @@ namespace FinanceApp.views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegistrationPage : ContentPage
     {
-        public string theme = "#FFF7EC";
+        public string theme = "мятная тема";
         
         public RegistrationPage()
         {
@@ -41,8 +41,8 @@ namespace FinanceApp.views
             
             if (newuser != null)
             {
-                Wallet wallet1 = new Wallet("кошелек 1", 0, newuser.Id);
-                Wallet wallet2 = new Wallet("кошелек 2", 0, newuser.Id);
+                Wallet wallet1 = new Wallet("кошелек 1", 0, newuser.Id, "денежные средства", 1, 1, true);
+                Wallet wallet2 = new Wallet("кошелек 2", 0, newuser.Id, "сберегательный счет", 1, 1, true);
                 bool w1 = await WalletRepository.SaveWallet(wallet1);
                 bool w2 = await WalletRepository.SaveWallet(wallet2);
 
@@ -63,8 +63,8 @@ namespace FinanceApp.views
             entryPass2.Text = "";
             entryEmail.Text = "";
             entryName.Text = "";
-            entryPass1.Placeholder = "enter pasword";
-            entryPass2.Placeholder = "repeat pasword";
+            entryPass1.Placeholder = "enter password";
+            entryPass2.Placeholder = "repeat password";
             entryEmail.Placeholder = "enter your email";
             entryName.Placeholder = "enter nickname";
         }

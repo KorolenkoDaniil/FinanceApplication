@@ -43,8 +43,7 @@ namespace FinanceApp.classes.User
             get => name;
             set
             {
-                if (Validator.ValidateName(value, 30)) name = value;
-                else { throw new Exception("никнейм не прошел проверку"); }
+               name = value;
             }
         }
         public string Email
@@ -52,8 +51,7 @@ namespace FinanceApp.classes.User
             get => email;
             set
             {
-                if (Validator.ValidateEmail(value)) email = value;
-                else { throw new Exception("проверьте введенную почту"); }
+                email = value;
             }
         }
         public string Password

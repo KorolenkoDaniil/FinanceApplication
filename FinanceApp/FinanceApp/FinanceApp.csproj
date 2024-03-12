@@ -37,6 +37,7 @@
     <None Remove="icons\list.png" />
     <None Remove="icons\list1.png" />
     <None Remove="icons\Money.png" />
+    <None Remove="icons\settings.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -57,6 +58,7 @@
     <EmbeddedResource Include="icons\list.png" />
     <EmbeddedResource Include="icons\list1.png" />
     <EmbeddedResource Include="icons\Money.png" />
+    <EmbeddedResource Include="icons\settings.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -105,9 +107,8 @@
     <EmbeddedResource Update="views\PassPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="views\MainPageClasses\" />
+    <EmbeddedResource Update="views\SettingsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
