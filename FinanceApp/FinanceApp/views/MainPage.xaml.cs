@@ -9,6 +9,7 @@ namespace FinanceApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
     {
+        Context context = new Context();
         public MainPage()
         {
             InitializeComponent(); 
@@ -20,18 +21,18 @@ namespace FinanceApp
         {
             if (File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "AccessFile")))
             {
-                await Navigation.PushAsync(new PassPage());
+                await Navigation.PushAsync(new PassPage(context));
             }
         }
 
         private async void ToSignUpPage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new RegistrationPage());
+            await Navigation.PushAsync(new RegistrationPage(context));
         }
 
         private async void ToSignInPage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AuthorisationPage());
+            await Navigation.PushAsync(new AuthorisationPage(context));
         }
     }
 }

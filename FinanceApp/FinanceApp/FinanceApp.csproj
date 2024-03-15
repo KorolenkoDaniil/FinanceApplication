@@ -12,6 +12,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="views\MainPageClasses\**" />
+    <EmbeddedResource Remove="views\MainPageClasses\**" />
+    <None Remove="views\MainPageClasses\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="views\MonthPage.xaml.cs" />
     <Compile Remove="views\PageOfDecision.xaml.cs" />
   </ItemGroup>
@@ -37,6 +43,7 @@
     <None Remove="icons\list.png" />
     <None Remove="icons\list1.png" />
     <None Remove="icons\Money.png" />
+    <None Remove="icons\VAyR.mp4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -57,10 +64,13 @@
     <EmbeddedResource Include="icons\list.png" />
     <EmbeddedResource Include="icons\list1.png" />
     <EmbeddedResource Include="icons\Money.png" />
+    <EmbeddedResource Include="icons\VAyR.mp4" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
@@ -105,9 +115,5 @@
     <EmbeddedResource Update="views\PassPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="views\MainPageClasses\" />
   </ItemGroup>
 </Project>

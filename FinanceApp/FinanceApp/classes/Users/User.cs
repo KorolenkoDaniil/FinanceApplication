@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FinanceApp.classes.User
+namespace FinanceApp.classes.Users
 {
     public class User
     {
@@ -21,7 +21,7 @@ namespace FinanceApp.classes.User
             Theme = theme;
         }
 
-       
+
         public int Id
         {
             get => id;

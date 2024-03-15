@@ -1,4 +1,5 @@
-﻿using FinanceApp.classes.User;
+﻿using FinanceApp.classes;
+using FinanceApp.classes.Users;
 using System;
 using Xamarin.Forms;
 
@@ -6,8 +7,8 @@ namespace FinanceApp.views
 {
     public partial class CovertPage : ContentPage
     {
-        User user;
-        public CovertPage(User user)
+        Context context;
+        public CovertPage(Context context)
         {
             InitializeComponent();
             card.Source = ImageSource.FromResource("FinanceApp.icons.card.png");
@@ -16,27 +17,23 @@ namespace FinanceApp.views
             diagram.Source = ImageSource.FromResource("FinanceApp.icons.diagram.png");
             change.Source = ImageSource.FromResource("FinanceApp.icons.change1.png");
             delete.Source = ImageSource.FromResource("FinanceApp.icons.delete-right.png");
-            this.user = user;
+            this.context = context;
         }
 
-        private async void ToListPage(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new ListPage());
-        }
+        private async void ToListPage(object sender, EventArgs e) =>
+            await Navigation.PushAsync(new ListPage(context));
+        
 
-        private async void ToCalcuatorPage(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new CalculatorPage(user)); 
-        }
+        private async void ToCalcuatorPage(object sender, EventArgs e) =>
+            await Navigation.PushAsync(new CalculatorPage(context)); 
+        
 
         private void ToConvertPage(object sender, EventArgs e)
         {
             //сброс данных 
         }
 
-        private async void ToAccountsPage(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new AccountsPage(user));
-        }
+        private async void ToAccountsPage(object sender, EventArgs e) => 
+           await Navigation.PushAsync(new AccountsPage(context));
     }
 }

@@ -1,17 +1,13 @@
-﻿using FinanceApp.classes.User;
+﻿using FinanceApp.classes;
+using FinanceApp.classes.Users;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 namespace FinanceApp.views
 {
     public partial class CalculatorPage : ContentPage
     {
-        User user;
-        public CalculatorPage(User user)
+        Context context;
+        public CalculatorPage(Context context)
         {
             InitializeComponent(); 
             card.Source = ImageSource.FromResource("FinanceApp.icons.card.png");
@@ -20,13 +16,13 @@ namespace FinanceApp.views
             diagram.Source = ImageSource.FromResource("FinanceApp.icons.diagram.png");
             change.Source = ImageSource.FromResource("FinanceApp.icons.change1.png");
             delete.Source = ImageSource.FromResource("FinanceApp.icons.delete-right.png");
-            this.user = user;
+            this.context = context;
         }
         
 
         private async void ToListPage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ListPage());
+            await Navigation.PushAsync(new ListPage(context));
         }
 
         private void ToCalcuatorPage(object sender, EventArgs e)
@@ -36,12 +32,12 @@ namespace FinanceApp.views
 
         private async void ToConvertPage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CovertPage(user));
+            await Navigation.PushAsync(new CovertPage(context));
         }
 
         private async void ToAccountsPage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AccountsPage(user));
+            await Navigation.PushAsync(new AccountsPage(context));
         }
     }
 }

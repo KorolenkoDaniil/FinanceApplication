@@ -1,7 +1,7 @@
-﻿using FinanceApp.classes.User;
-using FinanceApp.classes.Wallet;
+﻿using FinanceApp.classes;
+using FinanceApp.classes.Users;
+using FinanceApp.classes.Wallets;
 using System;
-using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 namespace FinanceApp.views
@@ -9,22 +9,17 @@ namespace FinanceApp.views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegistrationPage : ContentPage
     {
-        public string theme = "#FFF7EC";
-        
-        public RegistrationPage()
+        public string theme = "мятная тема";
+        Context context;
+
+        public RegistrationPage(Context context)
         {
             InitializeComponent(); 
             BindingContext = this;
             NavigationPage.SetHasNavigationBar(this, false);
+            this.context = context;
         }
-        private void PrintSize(object sender, EventArgs e)
-        {
-            double width = Application.Current.MainPage.Width;
-            double height = Application.Current.MainPage.Height;
-            Console.WriteLine(width);
-            Console.WriteLine(height);
-        }
-
+   
 
         private async void ToPageOfCommonInformation(object sender, EventArgs e)
         {
@@ -35,25 +30,23 @@ namespace FinanceApp.views
             }
             if (!string.Equals(entryPass1.Text, entryPass2.Text)) { Clean(); return; }
 
-            User newuser = new User(entryName.Text, entryEmail.Text, entryPass1.Text, theme);
-            newuser = await UserRepository.SaveUser(newuser);
+           
+            context.User = await UserRepository.SaveUser(new User(entryName.Text, entryEmail.Text, entryPass1.Text, theme));
+
 
             
-            if (newuser != null)
+            if (context.User != null)
             {
-                Wallet wallet1 = new Wallet("кошелек 1", 0, newuser.Id);
-                Wallet wallet2 = new Wallet("кошелек 2", 0, newuser.Id);
-                bool w1 = await WalletRepository.SaveWallet(wallet1);
-                bool w2 = await WalletRepository.SaveWallet(wallet2);
+                Wallet wallet1 = new Wallet("кошелек 1", 0, context.User.Id);
+                Wallet wallet2 = new Wallet("кошелек 2", 0, context.User.Id);
+                bool w1 = await WalletRepository.SaveWallet(wallet1, context);
+                bool w2 = await WalletRepository.SaveWallet(wallet2, context);
 
-                if (w1 && w2)
-                    await Navigation.PushAsync(new ListPage());
+
+                if (w1 && w2) await Navigation.PushAsync(new ListPage(context));
                 else Clean();
             }
-            else
-            {
-                Clean();
-            }
+            else Clean();
             //File.WriteAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "AccessFile"), $"{entryEmail.Text} {entryPass1.Text}");
         }
 

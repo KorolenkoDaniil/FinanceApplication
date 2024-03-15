@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FinanceApp.classes.Wallet
+namespace FinanceApp.classes.Wallets
 {
     public class Wallet
     {

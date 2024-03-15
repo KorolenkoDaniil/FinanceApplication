@@ -1,5 +1,6 @@
-﻿using FinanceApp.classes.User;
-using FinanceApp.classes.Wallet;
+﻿using FinanceApp.classes;
+using FinanceApp.classes.Users;
+using FinanceApp.classes.Wallets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,9 @@ namespace FinanceApp.views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AccountsPage : ContentPage
     {
-        User user;
+        Context context;
         Decimal sum = 0;
-        public AccountsPage(User user)
+        public AccountsPage(Context context)
         {
             InitializeComponent();
             card.Source = ImageSource.FromResource("FinanceApp.icons.card1.1.png");
@@ -26,30 +27,31 @@ namespace FinanceApp.views
             change.Source = ImageSource.FromResource("FinanceApp.icons.change.png");
             arrow_to_left.Source = ImageSource.FromResource("FinanceApp.icons.arrow_to_l.png");
             NavigationPage.SetHasNavigationBar(this, false);
-            this.user = user;
+            this.context = context;
+            WalletsPage.IsVisible = true;
+            NewWalletsPage.IsVisible = false;
             ShowWallets();
         }
 
         private async void ToListPage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ListPage());
+            await Navigation.PushAsync(new ListPage(context));
         }
 
-        private async void change_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new CalculatorPage(user));
-        }
+        private async void change_Clicked(object sender, EventArgs e) =>
+            await Navigation.PushAsync(new CalculatorPage(context));
+        
 
-        private async void ShowWallets()
+        private void ShowWallets()
         {
-            List<Wallet> WalletList = await WalletRepository.GetWallets(user.Id);
-            foreach (Wallet wallet in WalletList)
+            
+            foreach (Wallet wallet in context.Wallets)
             {
                 sum += wallet.Amount;
                 Console.WriteLine(wallet);
             }
             Sum.Text = $"$ {sum}";
-            WalletsCollection.ItemsSource = WalletList;
+            WalletsCollection.ItemsSource = context.Wallets;
         }
 
         private void OnItemSelected(object sender, SelectionChangedEventArgs e)
@@ -59,7 +61,8 @@ namespace FinanceApp.views
 
         private void Add_Clicked(object sender, EventArgs e)
         {
-
+            WalletsPage.IsVisible = false;
+            NewWalletsPage.IsVisible = true;
         }
     }
 }

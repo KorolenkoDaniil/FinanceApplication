@@ -1,17 +1,11 @@
 ﻿using FinanceApp.classes;
 using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace FinanceApp.views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MonthSelectionPage : ContentPage
 	{
         public DateTime CurrentDate = DateTime.Now;

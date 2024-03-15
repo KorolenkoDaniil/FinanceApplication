@@ -5,21 +5,25 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FinanceApp.classes.Wallet
+namespace FinanceApp.classes.Wallets
 {
     public static class WalletRepository
     {
         private static readonly HttpClient client = new HttpClient();
 
         static WalletRepository() { }
-        public async static Task<bool> SaveWallet(Wallet newWallet)
+        public async static Task<bool> SaveWallet(Wallet newWallet, Context context)
         {
             string json = JsonConvert.SerializeObject(newWallet);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
             HttpResponseMessage response = await client.PostAsync(Links.SaveWallet, content);
 
-            if (response.IsSuccessStatusCode) return true;
+            if (response.IsSuccessStatusCode)
+            {
+                context.Wallets.Add(newWallet);
+                return true;
+            }
             else return false;
         }
 

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FinanceApp.classes;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 namespace FinanceApp.views
@@ -10,11 +7,17 @@ namespace FinanceApp.views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PassPage : ContentPage
     {
-        string passCode = ""; public PassPage()
+        string passCode = "";
+        Context context;
+        public PassPage(Context context)
         {
             InitializeComponent();
-            delete.Source = ImageSource.FromResource("FinanceApp.icons.delete-right.png"); NavigationPage.SetHasNavigationBar(this, false);
+            delete.Source = ImageSource.FromResource("FinanceApp.icons.delete-right.png"); 
+            NavigationPage.SetHasNavigationBar(this, false);
+            this.context = context;
         }
+
+
         private void NumberButtonClicked(object sender, EventArgs e)
         {
             if (passCode.Length > 3) return;
@@ -57,7 +60,7 @@ namespace FinanceApp.views
                 case 4:
                     {
                         circle4.BackgroundColor = Color.Black;                        //if (string.Equals("1234", passCode)) await Navigation.PushAsync(new PageOfDecision());
-                        if (string.Equals("1234", passCode)) await Navigation.PushAsync(new ListPage());
+                        if (string.Equals("1234", passCode)) await Navigation.PushAsync(new ListPage(context));
                         else
                         {
                             DeleteSymbol();

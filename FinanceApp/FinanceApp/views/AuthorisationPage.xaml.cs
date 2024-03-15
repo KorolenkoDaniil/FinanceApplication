@@ -1,12 +1,8 @@
-﻿using FinanceApp.classes.User;
+﻿using FinanceApp.classes;
+using FinanceApp.classes.Users;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
-using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 using Xamarin.Forms.Xaml;
 
 namespace FinanceApp.views
@@ -14,32 +10,40 @@ namespace FinanceApp.views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AuthorisationPage : ContentPage
     {
-        public AuthorisationPage()
+        Context context;
+        public AuthorisationPage(Context context)
         {
             InitializeComponent();
+            this.context = context;
+            Loading.IsVisible = false;
         }
 
         private async void ToListPage(object sender, EventArgs e)
         {
-            User user = await UserRepository.AuthoriseUser(entryEmail.Text, entryPaasword.Text);
-            //User user = new User()
-            //{
-            //    Password = "t",
-            //    Name = "t",
-            //    Email = "t@gmail.com",
-            //    Id = 1,
-            //    Theme = "#FFF7EC"
-            //};
-            if (user != null)
+            button.IsEnabled = false; 
+            Loading.IsVisible = true;
+
+            context.User = await UserRepository.AuthoriseUser(entryEmail.Text, entryPaasword.Text);
+
+            if (context.User != null)
             {
                 Console.WriteLine("1 !!!!!!!!!!!!!!");
-                await Navigation.PushAsync(new ListPage(user));
+                await Navigation.PushAsync(new ListPage(context));
             }
             else
             {
                 button.Text = "пользователь не найден";
             }
+
+            Loading.IsVisible = false;
+
            
+            Device.StartTimer(TimeSpan.FromSeconds(5), () =>
+            {
+                button.IsEnabled = true;
+                return false; 
+            });
         }
+
     }
 }
