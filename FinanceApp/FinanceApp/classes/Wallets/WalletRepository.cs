@@ -12,16 +12,21 @@ namespace FinanceApp.classes.Wallets
         private static readonly HttpClient client = new HttpClient();
 
         static WalletRepository() { }
-        public async static Task<bool> SaveWallet(Wallet newWallet, Context context)
+        public async static Task<bool> SaveWallet(Wallet newWallet)
         {
             string json = JsonConvert.SerializeObject(newWallet);
+            Console.WriteLine("точка 10");
             var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+
+            Console.WriteLine(newWallet);
 
             HttpResponseMessage response = await client.PostAsync(Links.SaveWallet, content);
 
             if (response.IsSuccessStatusCode)
             {
-                context.Wallets.Add(newWallet);
+                Console.WriteLine("точка 11");
+                Console.WriteLine(response.IsSuccessStatusCode);
                 return true;
             }
             else return false;

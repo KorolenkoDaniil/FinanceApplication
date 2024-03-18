@@ -9,8 +9,8 @@ using Xamarin.Forms;
 namespace FinanceApp.views
 {
     public partial class ListPage : ContentPage
-	{
-        Context context;      
+    {
+        Context context;
 
         public ListPage(Context context)
         {
@@ -18,18 +18,21 @@ namespace FinanceApp.views
 
             InitializeComponent();
             this.context = context;
-            InitialiseWalltList();
+            
             card.Source = ImageSource.FromResource("FinanceApp.icons.card.png");
             cathegory.Source = ImageSource.FromResource("FinanceApp.icons.cathegories.png");
             list.Source = ImageSource.FromResource("FinanceApp.icons.list1.png");
             diagram.Source = ImageSource.FromResource("FinanceApp.icons.diagram.png");
             change.Source = ImageSource.FromResource("FinanceApp.icons.change.png");
             NavigationPage.SetHasNavigationBar(this, false);
+            InitialiseWalltList();
         }
 
-        public async void InitialiseWalltList() =>
+        public async void InitialiseWalltList() {
+            Console.WriteLine("3!!!!");
             context.Wallets = await WalletRepository.GetWallets(context.User.Id);
-        
+    }
+
 
 
         public ListPage(DateTime dateTime, bool MonthPeriod)

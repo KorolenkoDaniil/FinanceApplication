@@ -24,7 +24,7 @@ namespace FinS.Models
         public List<Wallet> SearchByUserID(int userId)
         {
             Console.WriteLine(userId + "!!!!!!!!");
-            List<Wallet> UsersWalletList = UserDB.Table<Wallet>().Where(u => u.UserID == userId).ToList();
+            List<Wallet> UsersWalletList = UserDB.Table<Wallet>().Where(u => u.UserId == userId).ToList();
             //foreach (Wallet walet in UsersWalletList)
             //{
             //    Console.WriteLine(walet);

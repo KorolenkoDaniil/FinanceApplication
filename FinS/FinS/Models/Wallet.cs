@@ -5,38 +5,34 @@ namespace FinS.Models
     [Table("Wallets")]
     public class Wallet
     {
-        private string name;
-        private decimal amount;
-        private int userId;
-
-        public Wallet(string name, decimal amount, int userId)
+        public Wallet(string name, decimal amount, int userId, string type, int color, bool include)
         {
-            this.name = name;
-            this.amount = amount;
-            this.userId = userId;
-        }
-        public Wallet() { }
+            if (string.IsNullOrEmpty(name) || string.IsNullOrWhiteSpace(name))
+                throw new ArgumentException();
 
+            if (string.IsNullOrEmpty(type) || string.IsNullOrWhiteSpace(type))
+                throw new ArgumentException();
+            
+            if (color < 0 || amount < 0)
+                throw new ArgumentException();
 
-        public int UserID
-        {
-            get => userId;
-            set => userId = value;
-        }
-
-        public decimal Amount
-        {
-            get => amount;
-            set => amount = value;
+            Name = name;
+            Amount = amount;
+            UserId = userId;
+            Include = include;
+            Type = type;
+            Color = color;
         }
 
-        public string Name
-        {
-            get => name;
-            set => name = value;
-        }
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; private set; }
+        public string Type { get; private set; }
+        public string Name { get; private set; }
+        public decimal Amount { get; private set; }
+        public int UserId { get; private set; }
+        public int Color { get; private set; }
+        public bool Include { get; private set; }
 
-        public override string ToString() => $"{name} {amount} {UserID}";
-
+        public override string ToString() => $"{Name} {Amount} {UserId}";
     }
 }

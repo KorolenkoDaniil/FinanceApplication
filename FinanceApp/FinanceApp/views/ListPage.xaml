@@ -11,22 +11,16 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height=".07*"/>
                     <RowDefinition Height=".06*"/>
-                    <!--пропуск-->
-                    <!--<RowDefinition Height=".03*"/>
-                    <RowDefinition Height=".008*"/>-->
-                    <!--пропуск-->
-                    <!--<RowDefinition Height=".03*"/>
-                    <RowDefinition Height=".02*"/>-->
-                    <!--пропуск-->
+                 
                     <RowDefinition Height=".3*"/>
                     <RowDefinition Height=".087*"/>
-                    <!--пропуск-->
+                    
                     <RowDefinition Height=".211*"/>
                     <RowDefinition Height=".077*"/>
-                    <!--пропуск-->
+                    
                     <RowDefinition Height=".077*"/>
                     <RowDefinition Height=".01*"/>
-                    <!--пропуск-->
+                    
                     <RowDefinition Height=".1*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
