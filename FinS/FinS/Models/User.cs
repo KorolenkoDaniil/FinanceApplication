@@ -4,51 +4,32 @@ namespace FinS.Models
     [Table("Users")]
     public class User
     {
-        private int id;
-        private string? name;
-        private string? email;
-        private string? password;
-        private string? theme;
+        [AutoIncrement, PrimaryKey]
+        public int Id { get; set; }
+        public int Theme { get; set; }
+        public string Name { get; set; }
+
+        [Unique]
+        public string Email { get; set; }
+        public string Password { get; set; }
+
+
         public User() { }
-        public User(string name, string email, string password, string theme)
+        public User(string name, string email, string password, int theme)
         {
             Name = name; Email = email;
             Password = password; Theme = theme;
         }
-
-
-        [AutoIncrement, PrimaryKey]
-        public int Id
+        public User(int id, string name, string email, string password, int theme)
         {
-            get => id; set
-            {
-                id = value;
-            }
-        }
-        public string Name
-        {
-            get => name;
-            set { name = value; }
+            Id = id;
+            Name = name; 
+            Email = email;
+            Password = password; 
+            Theme = theme;
         }
 
-        [Unique]
-        public string Email
-        {
-            get => email;
-            set { email = value; }
-        }
-        public string Password
-        {
-            get => password; set { password = value; }
-        }
-        public string Theme
-        {
-            get => theme;
-            set
-            {
-                theme = value;
-            }
-        }
+      
         public override string ToString()
         {
             return $"{Name} {Email} {Password} {Id}";

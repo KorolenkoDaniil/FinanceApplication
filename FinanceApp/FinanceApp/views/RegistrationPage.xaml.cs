@@ -1,4 +1,5 @@
 ﻿using FinanceApp.classes;
+using FinanceApp.classes.Color;
 using FinanceApp.classes.Users;
 using FinanceApp.classes.Wallets;
 using System;
@@ -10,7 +11,7 @@ namespace FinanceApp.views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegistrationPage : ContentPage
     {
-        public string theme = "мятная тема";
+        public int theme = 2;
         Context context;
 
         public RegistrationPage(Context context)
@@ -34,9 +35,12 @@ namespace FinanceApp.views
 
 
             Console.WriteLine("точка 2");
-            context.User = await UserRepository.SaveUser(new User(entryName.Text, entryEmail.Text, entryPass1.Text, theme));
+            context.ChangeUser(await UserRepository.SaveUser(new User(entryName.Text, entryEmail.Text, entryPass1.Text, theme)));
+            context.ChangeTheme(await ColorRepository.GetColor(1));
 
+            Console.WriteLine(context.Color);
             Console.WriteLine(context.User);
+
 
             Console.WriteLine("точка 3");
             if (context.User != null)

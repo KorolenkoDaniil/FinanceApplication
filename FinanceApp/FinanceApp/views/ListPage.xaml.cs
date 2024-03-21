@@ -3,12 +3,13 @@ using FinanceApp.classes.Users;
 using FinanceApp.classes.Wallets;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Xamarin.Forms;
 
 
 namespace FinanceApp.views
 {
-    public partial class ListPage : ContentPage
+    public partial class ListPage : ContentPage, INotifyPropertyChanged
     {
         Context context;
 
@@ -18,7 +19,6 @@ namespace FinanceApp.views
 
             InitializeComponent();
             this.context = context;
-            
             card.Source = ImageSource.FromResource("FinanceApp.icons.card.png");
             cathegory.Source = ImageSource.FromResource("FinanceApp.icons.cathegories.png");
             list.Source = ImageSource.FromResource("FinanceApp.icons.list1.png");
@@ -26,12 +26,24 @@ namespace FinanceApp.views
             change.Source = ImageSource.FromResource("FinanceApp.icons.change.png");
             NavigationPage.SetHasNavigationBar(this, false);
             InitialiseWalltList();
+            BindingContext = this;
+
         }
+
+        public Color BackgroundColor
+        {
+            get => Color.FromHex(context.Color.LightText);
+        }
+    
+
+
+
+
 
         public async void InitialiseWalltList() {
             Console.WriteLine("3!!!!");
-            context.Wallets = await WalletRepository.GetWallets(context.User.Id);
-    }
+            context.SetWalletsCollection(await WalletRepository.GetWallets(context.User.Id));
+        }
 
 
 

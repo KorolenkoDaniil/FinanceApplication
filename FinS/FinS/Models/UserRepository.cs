@@ -16,7 +16,9 @@ namespace FinS.Models
 
         public int SaveUser(User user)
         {
+
             UserDB.Insert(user);
+            Console.WriteLine("точка 3");
             User foundUser = UserDB.Table<User>().FirstOrDefault(u => u.Email == user.Email);
             return foundUser.Id;
         }

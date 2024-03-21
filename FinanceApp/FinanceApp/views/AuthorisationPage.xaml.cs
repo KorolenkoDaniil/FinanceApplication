@@ -1,4 +1,5 @@
 ﻿using FinanceApp.classes;
+using FinanceApp.classes.Color;
 using FinanceApp.classes.Users;
 using System;
 using Xamarin.Essentials;
@@ -23,7 +24,11 @@ namespace FinanceApp.views
             button.IsEnabled = false; 
             Loading.IsVisible = true;
 
-            context.User = await UserRepository.AuthoriseUser(entryEmail.Text, entryPaasword.Text);
+            context.ChangeUser(await UserRepository.AuthoriseUser(entryEmail.Text, entryPaasword.Text));
+            //context.ChangeTheme(await ColorRepository.GetColor());
+            context.ChangeTheme(await ColorRepository.GetColor(1));
+            Console.WriteLine(context.Color);
+
 
             if (context.User != null)
             {

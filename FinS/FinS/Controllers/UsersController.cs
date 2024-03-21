@@ -17,10 +17,12 @@ namespace FinS.Controllers
         [HttpPost]
         public async Task<User> Registration([FromBody] User user)
         {
-
+            Console.WriteLine("точка 1");
             Console.WriteLine(user);
             user.Id = UserRepository.SaveUser(user);
+            Console.WriteLine("точка 2");
             Console.WriteLine(user);
+            
             return user;
         }
 

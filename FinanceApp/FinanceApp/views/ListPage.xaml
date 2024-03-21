@@ -39,7 +39,7 @@
                                     <ColumnDefinition Width="0.05*"/>
                                 </Grid.ColumnDefinitions>
                                 <Label Text="Транзакции" FontSize="Body" VerticalOptions="Center" TextColor="Black" Grid.Column="1"  Grid.Row="0"/>
-                                <Button x:Name="MonthLabel" Clicked="ToMonthSelectionPage" TextColor="Black" CornerRadius="40" FontSize="Micro" HeightRequest="40" Grid.Column="2"  Grid.Row="0" BackgroundColor="#fff1de" VerticalOptions="Center" HorizontalOptions="Center"  />
+                                <Button x:Name="MonthLabel" Clicked="ToMonthSelectionPage" TextColor="Black" CornerRadius="40" FontSize="Micro" HeightRequest="40" Grid.Column="2"  Grid.Row="0" BackgroundColor="{Binding BackgroundColor}" VerticalOptions="Center" HorizontalOptions="Center"  />
                             </Grid>
                         </Frame>
                     </StackLayout>
@@ -66,7 +66,7 @@
 
 
 
-                <Frame CornerRadius="30" Padding="7" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" Margin="25, 0, 25, 0" BackgroundColor="#F5E3D9">
+                <Frame CornerRadius="30" Padding="7" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" Margin="25, 0, 25, 0" BackgroundColor="{Binding BackgroundColor}">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width=".5*"/>
@@ -108,7 +108,7 @@
                         <RowDefinition Height="60" />
                     </Grid.RowDefinitions>
 
-                    <Button x:Name="Add" Clicked="AddOperation" Padding="1, 0, 0, 2" Text="+" TextColor="Black" FontSize="32" BackgroundColor="#F5E3D9" CornerRadius="10" Grid.Row="0" Grid.Column="1" />
+                    <Button x:Name="Add" Clicked="AddOperation" Padding="1, 0, 0, 2" Text="+" TextColor="Black" FontSize="32" BackgroundColor="{Binding BackgroundColor}" CornerRadius="10" Grid.Row="0" Grid.Column="1" />
                 </Grid>
 
 

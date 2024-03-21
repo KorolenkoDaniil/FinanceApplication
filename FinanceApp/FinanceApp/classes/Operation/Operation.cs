@@ -5,15 +5,14 @@ namespace FinanceApp.classes.FinanceOpertaion
 {
     class Operation
     {
-        private int id;
-        private int userId;
-        private DateTime date;
-        private bool profit;
-        private decimal sum;
-        private string wallet;
-        private string cathegory;
-        private string description;
-     
+        public int Id { get; private set; }
+        public int UserID { get; private set; }
+        public DateTime Date { get; private set; }
+        public bool Profit { get; private set; }
+        public decimal Sum { get; private set; }
+        public string Wallet { get; private set; }
+        public string Cathegory { get; private set; }
+        public string Description { get; private set; }
 
         public Operation() { }
         public Operation(int userId, DateTime date, bool profit, decimal sum, string wallet, string cathegory, string description)
@@ -26,58 +25,6 @@ namespace FinanceApp.classes.FinanceOpertaion
             Cathegory = cathegory;
             Description = description;
         }
-
-
-        public int Id
-        {
-            get => id;
-            set => id = value;
-        }
-
-        public int UserID
-        {
-            get => userId;
-            set => userId = value;
-        }
-
-        public DateTime Date
-        {
-            get => date;
-            set => date = value;
-        }
-
-        public bool Profit
-        {
-            get => profit;
-            set => profit = value;
-        }
-
-        public decimal Sum
-        {
-            get => sum; 
-            set => sum = value;
-        }
-
-        public string Wallet
-        {
-            get => wallet; 
-            set => wallet = value;
-        }
-
-        public string Cathegory
-        {
-            get => cathegory; 
-            set => cathegory = value;
-        }
-
-        public string Description
-        {
-            get => description; 
-            set => description = value;
-        }
-
-
-
         public override string ToString() => $"{Id} {UserID} {Date} {Profit} {Sum} {Wallet} {Cathegory} {Description}";
        
     }
